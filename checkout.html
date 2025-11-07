@@ -814,6 +814,13 @@
                                                     <span id="subtotal_header"
                                                         class="text-323232 font-bold">$00.00</span>
                                                 </div>
+                                                <!-- Current Balance -->
+                                                <div
+                                                    class="flex justify-between items-center pt-5 mt-5 border-t border-gray-900 mb-6 font-medium text-lg">
+                                                    <span class="text-323232">Total Balance:</span>
+                                                    <span id="balance" class="text-323232 font-bold">$1000.00</span>
+
+                                                </div>
 
                                                 <!-- Checkout Links -->
                                                 <div class="checkout-link space-y-3">
@@ -925,8 +932,9 @@
                                     <form action="#">
                                         <p
                                             class="checkout-coupon flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-2">
-                                            <input type="text" placeholder="Coupon Code" class="form-input" />
-                                            <button class="os-btn os-btn-black h-10 px-8 flex-shrink-0"
+                                            <input id="coupontext" type="text" placeholder="Coupon Code"
+                                                class="form-input" />
+                                            <button id="coupons" class="os-btn os-btn-black h-10 px-8 flex-shrink-0"
                                                 type="submit">Apply Coupon</button>
                                         </p>
                                     </form>
@@ -991,12 +999,12 @@
                                     </div>
 
                                     <div class="checkout-form-list form-group">
-                                        <label>State / County <span class="required">*</span></label>
+                                        <label>State / Country <span class="required">*</span></label>
                                         <input type="text" placeholder="" class="form-input" />
                                     </div>
                                     <div class="checkout-form-list form-group">
                                         <label>Postcode / Zip <span class="required">*</span></label>
-                                        <input type="text" placeholder="Postcode / Zip" class="form-input" />
+                                        <input type="number" placeholder="Postcode / Zip" class="form-input" />
                                     </div>
                                     <div class="checkout-form-list form-group">
                                         <label>Email Address <span class="required">*</span></label>
@@ -1004,7 +1012,7 @@
                                     </div>
                                     <div class="checkout-form-list form-group">
                                         <label>Phone <span class="required">*</span></label>
-                                        <input type="text" placeholder="Phone" class="form-input" />
+                                        <input type="number" placeholder="Phone" class="form-input" />
                                     </div>
 
                                     <div class="md:col-span-2">
@@ -1092,6 +1100,14 @@
                         <div class="lg:col-span-1">
                             <div class="your-order mb-30">
                                 <h3 class="checkout-section-title">Your order</h3>
+                                <!-- Current Balance -->
+                                <div
+                                    class="flex justify-between items-center pt-5 mt-5 border-t border-gray-900 mb-6 font-medium text-lg">
+                                    <span class="text-323232">Total Balance:</span>
+                                    <span id="balance2" class="text-323232 font-bold">$1000.00</span>
+
+                                </div>
+
                                 <div class="your-order-table overflow-x-auto">
                                     <table class="w-full">
                                         <thead>
@@ -1133,6 +1149,13 @@
                                             </tr>
                                             <tr class="order-total">
                                                 <th class="py-4 text-lg font-bold text-323232">Order Total</th>
+                                                <td class="text-right py-4">
+                                                    <strong><span id="orderTotal" class="amount">
+                                                            $00.00</span></strong>
+                                                </td>
+                                            </tr>
+                                            <tr id="coupon-applied" class="order-total hidden">
+                                                <th class="py-4 text-lg font-bold text-323232">Discounted Total: </th>
                                                 <td class="text-right py-4">
                                                     <strong><span id="orderTotal" class="amount">
                                                             $00.00</span></strong>
@@ -1180,7 +1203,7 @@
                                                 data-parent="#payment-accordion">
                                                 <div class="card-body">
                                                     Please send your cheque to Store Name, Store Street, Store Town,
-                                                    Store State / County, Store Postcode.
+                                                    Store State / Country, Store Postcode.
                                                 </div>
                                             </div>
                                         </div>

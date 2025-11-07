@@ -1,5 +1,5 @@
 let cart = [];
-
+let balance;
 //  Load cart from localStorage
 async function getCart() {
   cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -9,6 +9,24 @@ async function getCart() {
 //  Save cart to localStorage
 async function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
+}
+async function setBal(newBal) {
+  localStorage.setItem("balance", newBal);
+  balance = parseFloat(newBal);
+  return balance;
+}
+
+async function getBal() {
+  let bal = localStorage.getItem("balance");
+
+  if (bal === null || bal == undefined) {
+    await setBal("1000");
+    bal = "1000";
+  }
+
+  balance = parseFloat(bal);
+  document.getElementById("balance").innerText = "$" + balance.toString();
+  return balance;
 }
 
 // Add new item (no duplicates)
@@ -104,6 +122,7 @@ async function renderCart(disableBtn = 0) {
 
   let pricebox = document.getElementById("subtotal_header");
   pricebox.innerText = "$" + toalPrice;
+  toatlPriceGlobal = toalPrice;
   document.getElementById("cart-count").innerText = `( ${cart.length} )`;
   deleteItems();
 }
@@ -325,3 +344,4 @@ function updateCartSubtotal() {
   const subtotalBox = document.getElementById("subtotal");
   if (subtotalBox) subtotalBox.textContent = `$${total.toFixed(2)}`;
 }
+getBal();

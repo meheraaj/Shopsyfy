@@ -100,7 +100,7 @@ async function checkoutRender() {
 
     itemCheckout.innerHTML += t;
   }
-
+  document.getElementById("balance2").innerText = "$" + balance;
   document.getElementById("checkoutAmmount").innerText = "$" + totalPrice;
 
   let shippingPrice = document.getElementById("flat_rate").checked
@@ -124,6 +124,27 @@ async function checkoutRender() {
       document.getElementById("orderTotal").innerText = "$" + shippingPrice;
     });
 
+  let hasCoupon = false;
+  document.getElementById("coupons").addEventListener("click", (e) => {
+    e.preventDefault();
+    let val = document.getElementById("coupontext").value;
+    if (!hasCoupon) {
+      if (val.length > 4) {
+        hasCoupon = true;
+        renderAlert(
+          "🎉 Coupon applied successfully! You got a 10% discount + Free shipping. "
+        );
+        document.getElementById("coupon-applied").classList.remove("hidden");
+        document
+          .getElementById("coupon-applied")
+          .querySelector(".amount").innerText = totalPrice - totalPrice * 0.1;
+      } else {
+        renderAlert("❌ Invalid coupon code. Please try again.", "bg-red-600");
+      }
+    } else {
+      renderAlert("Coupon already claimed.");
+    }
+  });
   document.getElementById("orderbtn").addEventListener("click", (e) => {
     event.preventDefault();
     let totalF = 0;
@@ -134,14 +155,29 @@ async function checkoutRender() {
       if (!(item[i].value == "")) totalF++;
     }
 
-    if (cart.length < 1) renderAlert("Error: Cart is Empty.🛒", "bg-red-600");
+    if (parseFloat(balance) - totalPrice < 0) {
+      renderAlert(
+        `⚠️ Insufficient balance 💸\n Your balance is $${balance}, but the order total is $${totalPrice}`,
+        "bg-red-600"
+      );
+    } else if (cart.length < 1) renderAlert(" Cart is Empty.🛒", "bg-red-600");
     else if (totalF < 12) {
-      renderAlert("Error: Please fill all required fields", "bg-red-600");
+      renderAlert("Please fill all required fields", "bg-red-600");
     } else {
+      totalPrice = totalPrice - totalPrice * 0.1;
       cart = [];
       localStorage.removeItem("cart");
+      setBal(parseFloat(balance) - totalPrice);
+      getBal();
+      renderCart();
+      document.getElementById("cart-count").innerText = "( 0 )";
+      document.getElementById("balance2").innerText = "$" + balance;
       document.getElementById("itemCheckout").innerHTML = "";
-      renderAlert("Order Placed");
+      renderAlert(
+        `✅ Order placed successfully! New balance: $${balance} ${
+          hasCoupon ? " + 10% discount." : ""
+        }`
+      );
     }
   });
   toatlPriceGlobal = totalPrice;

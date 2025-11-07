@@ -257,9 +257,29 @@ fillDatas();
 
 document.getElementById("sortSelect").addEventListener("change", (e) => {
   console.log(e.target.value);
+  currentFilter = e.target.value;
   filterTrending(e.target.value);
 });
 
+document.getElementById("searchInput").addEventListener("input", (e) => {
+  const v = e.target.value.trim().toLowerCase();
+  console.log(v);
+  if (v === "") {
+    // If input is cleared → show all products
+    tmpProduction = [...myContent.trendingProducts];
+  } else {
+    // Filter by title text
+    tmpProduction = myContent.trendingProducts.filter((p) =>
+      p.title.toLowerCase().includes(v)
+    );
+  }
+
+  // ✅ Always re-render (for both typing and deleting)
+  filterTrending(currentFilter);
+});
+
+let tmpProduction;
+let currentFilter = "default";
 //priceLowHigh
 //priceHighLow
 //default
@@ -267,7 +287,7 @@ document.getElementById("sortSelect").addEventListener("change", (e) => {
 //nameZA
 
 function filterTrending(val) {
-  let tmpProd = [...myContent["trendingProducts"]];
+  let tmpProd = [...tmpProduction];
   if (val === "priceLowHigh") {
     tmpProd.sort((a, b) => {
       return (
@@ -287,7 +307,7 @@ function filterTrending(val) {
   } else if (val === "nameZA") {
     tmpProd.sort((a, b) => b.title.localeCompare(a.title));
   } else {
-    fillTrendingProd(myContent["trendingProducts"]);
+    fillTrendingProd(tmpProduction);
     return;
   }
 
