@@ -11,16 +11,13 @@ async function fetchData() {
     console.log(error);
   }
 }
+let myContent;
 
-async function fillDatas() {
-  let myContent = await await fetchData();
-  let blgoPosts = document.querySelector("#blgoPosts");
-  let saleOFF = document.querySelector("#scroll-container");
+function fillTrendingProd(prod) {
   let trendingProducts = document.querySelector("#trendingProducts");
-
-  //Trending PRODUCTs
-  for (let i = 0; i < myContent.trendingProducts.length; i++) {
-    const p = myContent.trendingProducts[i];
+  trendingProducts.innerHTML = "";
+  for (let i = 0; i < prod.length; i++) {
+    const p = prod[i];
 
     let tmpHtml = `
 
@@ -28,18 +25,10 @@ async function fillDatas() {
                                 <div class="product__wrapper mb-16">
                                     <div class="product__thumb">
                                         <a href="product-details.html" class="w-img block">
-                                            <img src="${
-                                              myContent["trendingProducts"][i][
-                                                "image1"
-                                              ]
-                                            }"
+                                            <img src="${prod[i]["image1"]}"
                                                 alt="product-img" draggable="false">
                                             <img class="product__thumb-2"
-                                                src="${
-                                                  myContent["trendingProducts"][
-                                                    i
-                                                  ]["image2_hover"]
-                                                }"
+                                                src="${prod[i]["image2_hover"]}"
                                                 alt="product-img" draggable="false">
                                         </a>
                                         <div class="product__action transition-3">
@@ -56,34 +45,22 @@ async function fillDatas() {
                                         </div>
                                          <div class="product__sale">
                                             <span class="new">${
-                                              myContent["trendingProducts"][i][
-                                                "saleInfo"
-                                              ]["new"] ?? ""
+                                              prod[i]["saleInfo"]["new"]
                                             }</span>
                                             <span class="percent">${
-                                              myContent["trendingProducts"][i][
-                                                "saleInfo"
-                                              ]["percent"] ?? ""
+                                              prod[i]["saleInfo"]["percent"]
                                             }</span>
                                         </div>
                                     </div>
                                     <div class="product__content relative">
                                         <div class="product__content-inner">
                                             <h4><a href="product-details.html">${
-                                              myContent["trendingProducts"][i][
-                                                "title"
-                                              ]
+                                              prod[i]["title"]
                                             }</a></h4>
                                             <div class="product__price transition-3">
-                                                <span>${
-                                                  myContent["trendingProducts"][
-                                                    i
-                                                  ]["price"]
-                                                }</span>
+                                                <span>${prod[i]["price"]}</span>
                                                 <span class="old-price">${
-                                                  myContent["trendingProducts"][
-                                                    i
-                                                  ]["oldPrice"]
+                                                  prod[i]["oldPrice"]
                                                 }</span>
                                             </div>
                                         </div>
@@ -100,7 +77,15 @@ async function fillDatas() {
 
     trendingProducts.innerHTML += tmpHtml;
   }
+}
 
+async function fillDatas() {
+  myContent = await await fetchData();
+  let blgoPosts = document.querySelector("#blgoPosts");
+  let saleOFF = document.querySelector("#scroll-container");
+
+  //Trending PRODUCTs
+  fillTrendingProd(myContent.trendingProducts);
   //   saleOFF
   for (let i = 0; i < myContent.saleOffProducts.length; i++) {
     const p = myContent.saleOffProducts[i];
@@ -270,3 +255,41 @@ async function fillDatas() {
 }
 fillDatas();
 
+document.getElementById("sortSelect").addEventListener("change", (e) => {
+  console.log(e.target.value);
+  filterTrending(e.target.value);
+});
+
+//priceLowHigh
+//priceHighLow
+//default
+//nameAZ
+//nameZA
+
+function filterTrending(val) {
+  let tmpProd = [...myContent["trendingProducts"]];
+  if (val === "priceLowHigh") {
+    tmpProd.sort((a, b) => {
+      return (
+        parseFloat(a.price.replace("$", "")) -
+        parseFloat(b.price.replace("$", ""))
+      );
+    });
+  } else if (val === "priceHighLow") {
+    tmpProd.sort((a, b) => {
+      return (
+        parseFloat(b.price.replace("$", "")) -
+        parseFloat(a.price.replace("$", ""))
+      );
+    });
+  } else if (val === "nameAZ") {
+    tmpProd.sort((a, b) => a.title.localeCompare(b.title));
+  } else if (val === "nameZA") {
+    tmpProd.sort((a, b) => b.title.localeCompare(a.title));
+  } else {
+    fillTrendingProd(myContent["trendingProducts"]);
+    return;
+  }
+
+  fillTrendingProd(tmpProd);
+}

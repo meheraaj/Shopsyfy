@@ -13,7 +13,7 @@ async function saveCart() {
 
 // Add new item (no duplicates)
 async function setItem(item, up = 0) {
-  const existing = cart.find((c) => c.img === item.img);
+  const existing = cart.find((c) => c.name === item.name);
   if (existing) {
     if (up == 0) {
       existing.quantity += 1;
@@ -28,8 +28,8 @@ async function setItem(item, up = 0) {
 }
 
 //  Remove item from cart
-async function removeItem(imgUrl, price) {
-  cart = cart.filter((item) => item.img !== imgUrl);
+async function removeItem(tittle, price) {
+  cart = cart.filter((item) => item.name !== tittle);
   let totalPrice = parseFloat(price.replace("$", "").trim()) || 0;
   let pricebox = document.getElementById("subtotal_header");
   totalPrice =
@@ -91,7 +91,9 @@ async function renderCart(disableBtn = 0) {
           <button ${
             disableBtn ? "disabled" : undefined
           } class="deleteItem text-gray-400 hover:text-red-500 transition"
-                  data-img="${cart[i].img}" data-price="${cart[i].price}">
+                data-title="${cart[i].name}"  data-img="${
+      cart[i].img
+    }" data-price="${cart[i].price}">
             ❌
           </button>
         </div>
@@ -109,8 +111,8 @@ async function renderCart(disableBtn = 0) {
 async function deleteItems() {
   document.querySelectorAll(".deleteItem").forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      const imgUrl = e.target.dataset.img;
-      removeItem(imgUrl, e.target.dataset.price);
+      const title = e.target.dataset.title;
+      removeItem(title, e.target.dataset.price);
       return;
     });
   });
@@ -155,9 +157,9 @@ addCartHandler();
 async function deleteItemsCartPage() {
   document.querySelectorAll(".deleteItems").forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      const imgUrl = e.target.dataset.img;
+      const tittle = e.target.dataset.tittle;
       removeItemCartPage(
-        imgUrl,
+        tittle,
         e.target.dataset.price,
         e.target.dataset.quantity
       );
@@ -166,8 +168,8 @@ async function deleteItemsCartPage() {
   });
 }
 
-async function removeItemCartPage(imgUrl, price, quantity) {
-  cart = cart.filter((item) => item.img !== imgUrl);
+async function removeItemCartPage(tittle, price, quantity) {
+  cart = cart.filter((item) => item.name !== tittle);
   let totalPrice = parseFloat(
     document.getElementById("subtotals").innerText.split("$")[1]
   );
@@ -185,7 +187,7 @@ async function removeItemCartPage(imgUrl, price, quantity) {
     "$" + totalPrice == NaN ? "00.00" : totalPrice;
   document.getElementById("total").innerText =
     "$" + totalPrice == NaN ? "00.00" : totalPrice;
-  removeItem(imgUrl, price);
+  removeItem(tittle, price);
   cartPageRender();
 }
 
@@ -240,7 +242,9 @@ async function cartPageRender() {
       </td>
       <td class="product-remove text-center">
         <button class="deleteItems text-gray-400 hover:text-red-500 transition"
-          data-img="${cart[i].img}" data-price="${cart[i].price}"
+          data-img="${cart[i].img}" data-price="${
+      cart[i].price
+    }" data-tittle="${cart[i].name}" 
           data-quantity="${cart[i].quantity}">
           ❌
         </button>
