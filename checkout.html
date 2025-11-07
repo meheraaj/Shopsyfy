@@ -4,25 +4,21 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Outstock</title>
+    <title>Shopsyfy</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- 1. SWIPER CSS (Required for Swiper.js functionality) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 
-    <!-- Custom Tailwind Config for legacy colors and new default settings -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    // --- Merged Configuration ---
                     colors: {
                         'f5f5f5': '#f5f5f5',
                         '323232': '#323232', // Used as primary dark text/button color
@@ -40,7 +36,6 @@
                         'hero-xl': '750px',
                         'hero-2xl': '925px',
                     },
-                    // Screens needed for the cart's responsive behavior
                     screens: {
                         'sm': '576px',
                         'md': '768px',
@@ -48,22 +43,12 @@
                         'xl': '1280px',
                         '2xl': '1536px'
                     },
-                    // --- End Merged Configuration ---
                 }
             }
         }
     </script>
 
 
-
-    <!-- M -->
-    <!-- E -->
-    <!-- H -->
-    <!-- E -->
-    <!-- R -->
-    <!-- A -->
-    <!-- J -->
-    <!-- NEW CSS __MEHERAJ__ -->
     <style type="text/tailwindcss">
         .blog_post{
             @apply text-white;
@@ -74,12 +59,9 @@
         .desc{
             @apply px-10 text-[15px];
         }
-        /* .os-btn{
-            @apply w-1/4 self-center px-2 py-3 border-2 border-black text-[15px];
-        } */
         .os-btn {
-            @apply  self-center px-2 py-3 border-2 text-[15px]
-                border-[#323232] text-[#323232] bg-white 
+            @apply self-center px-2 py-3 border-2 text-[15px]
+                border-[#323232] text-[#323232] bg-white
                 transition-colors duration-300
                 hover:text-white hover:border-[#bc8246] hover:bg-[#bc8246];
         }
@@ -89,19 +71,17 @@
         .blog__item{
         @apply flex flex-col select-none ;
         }
-        /* --- FIX: Removed fixed width/height to ensure responsiveness via Swiper's slidesPerView --- */
         .blog__thumb{
-            @apply w-full h-auto; 
+            @apply w-full h-auto;
         }
         .blog__content{
-            @apply text-[1.3rem] text-[#00000083] mt-4 w-full h-auto; 
+            @apply text-[1.3rem] text-[#00000083] mt-4 w-full h-auto;
         }
-        /* --- END FIX --- */
         .blog__meta{
             @apply text-[0.8rem] py-2;
         }
         .blog__content p{
-               @apply text-[0.8rem] pb-5 
+               @apply text-[0.8rem] pb-5
         }
         .blog__content h4,.blog__content .os-btn{
             @apply text-black
@@ -114,7 +94,7 @@
             @apply hidden
         }
 
-      
+
        .product__thumb{
         @apply relative overflow-visible visible;
        }
@@ -160,22 +140,21 @@
         }
 
         main{
-            @apply xl:px-[10%] 2xl:px-[15%]
+            @apply xl:px-[5%] 2xl:px-[10%]
         }
 
-        /* --- Cart Page Styling --- */
-        
-        /* Page Title Section */
         .page__title-section {
             @apply relative flex items-center h-64 bg-cover bg-center;
             background-color: #f0f0f0;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
         }
         .page__title-section h1 {
-            @apply text-4xl lg:text-5xl font-extrabold text-white;
+            @apply text-4xl lg:text-5xl font-extrabold text-323232;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
         .breadcrumb-item {
-            @apply text-white text-sm font-medium;
+            @apply text-323232 text-sm font-medium;
         }
         .breadcrumb-item a {
             @apply hover:text-bc8246 transition;
@@ -184,7 +163,6 @@
             @apply text-bc8246;
         }
         
-        /* Cart Table Styling */
         .cart-table thead th {
             @apply uppercase text-xs lg:text-sm font-semibold text-323232 border-b-2 border-gray-300 py-4 text-left whitespace-nowrap;
         }
@@ -201,7 +179,6 @@
             @apply font-semibold text-323232 whitespace-nowrap;
         }
 
-        /* Quantity Plus/Minus Component */
         .cart-plus-minus {
             @apply flex items-center border border-gray-300 rounded-full w-24 mx-auto;
         }
@@ -211,7 +188,6 @@
         .qty-btn {
             @apply w-7 h-8 flex items-center justify-center text-sm text-gray-500 hover:text-323232 transition cursor-pointer;
         }
-        /* Coupon and Update Buttons */
         .coupon-all {
             @apply flex flex-col sm:flex-row justify-between pt-8 space-y-4 sm:space-y-0;
         }
@@ -222,7 +198,6 @@
             @apply flex-grow border border-gray-300 rounded-lg px-4 py-3 placeholder-gray-500 focus:ring-bc8246 focus:border-bc8246 outline-none;
         }
 
-        /* Cart Totals */
         .cart-page-total {
             @apply mt-10 p-6 sm:p-8 border border-gray-200 rounded-lg shadow-md bg-white;
         }
@@ -236,23 +211,115 @@
             @apply font-bold text-lg border-b-0 py-3 text-323232;
         }
         .cart-page-total .os-btn {
-            @apply  self-center px-2 py-3 border-2 text-[15px]
-                border-[#323232] text-[#323232] bg-white 
+            @apply self-center px-2 py-3 border-2 text-[15px]
+                border-[#323232] text-[#323232] bg-white
                 transition-colors duration-300
                 hover:text-white hover:border-[#bc8246] hover:bg-[#bc8246];
         }
-  </style>
+        .form-input {
+            @apply h-[45px] w-full border border-gray-200 rounded-lg px-3 text-gray-700 placeholder-gray-500 focus:border-bc8246 focus:ring-bc8246 outline-none transition-colors duration-200;
+        }
+        .form-textarea {
+            @apply w-full border border-gray-200 rounded-lg p-3 text-gray-700 placeholder-gray-500 focus:border-bc8246 focus:ring-bc8246 outline-none transition-colors duration-200 min-h-[100px];
+        }
+        .form-select {
+            @apply h-[45px] w-full border border-gray-200 rounded-lg px-3 text-gray-700 pr-10 appearance-none bg-white focus:border-bc8246 focus:ring-bc8246 outline-none transition-colors duration-200;
+        }
+        .form-group {
+            @apply mb-6;
+        }
+        .form-group label {
+            @apply block text-gray-600 text-sm font-medium mb-1;
+        }
+        .required {
+            @apply text-red-500 font-bold;
+        }
+
+
+        .checkout-accordion-header {
+            @apply bg-f5f5f5 border-t-[3px] border-bc8246 text-sm font-normal m-0 p-4 pl-12 relative font-medium text-323232;
+        }
+        .checkout-accordion-header::before {
+            content: "\f07b";
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            position: absolute;
+            color: #6f7172; 
+            font-family: 'Font Awesome 6 Free'; 
+            font-weight: 700;
+        }
+        .coupon-info p.coupon-text {
+            @apply mb-4 text-sm text-gray-600;
+        }
+        .coupon-content {
+            @apply border border-gray-200 mt-5 p-6 rounded-lg;
+        }
+        .lost-password a {
+            @apply text-gray-600 hover:text-bc8246 transition-colors duration-200 text-sm mt-3 inline-block;
+        }
+
+
+        .checkout-section-title {
+            @apply text-2xl font-bold text-323232 border-b border-gray-200 pb-3 mb-6;
+        }
+        .country-select .relative::after {
+            content: "\f107";
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            position: absolute;
+            color: #6f7172;
+            font-family: 'Font Awesome 6 Free'; 
+            font-weight: 700;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+
+        .your-order {
+            @apply p-6 lg:p-8 border-[1px] border-gray-200 rounded-lg shadow-md;
+        }
+        .your-order-table table {
+            @apply table-auto w-full;
+        }
+        .your-order-table th, .your-order-table td {
+            @apply border-b border-gray-100 py-3 text-gray-700 text-sm;
+        }
+        .your-order-table thead th {
+            @apply border-b-2 font-semibold text-323232 uppercase text-xs tracking-wider;
+        }
+        .your-order-table tr.cart-subtotal th, .your-order-table tr.order-total th {
+            @apply border-b-0;
+        }
+        .your-order-table tr.cart-subtotal {
+            @apply border-b border-dashed border-gray-300;
+        }
+        .your-order-table tr.order-total td span {
+            @apply text-bc8246 font-bold text-xl;
+        }
+
+        .payment-toggle {
+            @apply w-full text-left font-medium text-323232 hover:text-bc8246 transition-colors duration-200;
+        }
+        .payment-content {
+            @apply border-t border-gray-100 p-4 text-sm text-gray-600;
+        }
+        .card-header.active {
+            @apply bg-gray-50;
+        }
+        .card-header.active .payment-toggle {
+            @apply text-bc8246;
+        }
+    </style>
     <style>
-        /* Base Styles & Typography */
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
         body {
             font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
         }
 
-        /* --- Custom Component Styles --- */
-
-        /* Preloader Styles - Added basic styles for visibility */
         #loading {
             z-index: 9999;
         }
@@ -262,24 +329,19 @@
             height: 100px;
         }
 
-        /* For Webkit browsers (Chrome, Safari, etc.) */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
 
-        /* For IE, Edge, and Firefox */
         .no-scrollbar {
             -ms-overflow-style: none;
-            /* IE and Edge */
             scrollbar-width: none;
-            /* Firefox */
         }
 
         .object {
             width: 25px;
             height: 25px;
             background-color: #bc8246;
-            /* theme-primary */
             border-radius: 50%;
             margin: 5px;
             display: inline-block;
@@ -311,14 +373,12 @@
             }
         }
 
-        /* Header Dropdown Hover Logic for Desktop */
         .main-menu .has-dropdown:hover>.submenu {
             visibility: visible;
             opacity: 1;
             transform: scaleY(1);
         }
 
-        /* Submenu styling - fixed positioning outside the hover scope */
         .submenu {
             position: absolute;
             top: 100%;
@@ -335,15 +395,12 @@
             transition: all 0.3s ease-out;
         }
 
-        /* Mega Menu Specific Styling - UPDATED */
         .mega-menu>.submenu {
             left: 0;
-            /* Reset left for full-width mega menu */
             min-width: 100vw;
             width: 100vw;
             max-width: none;
             padding: 40px 35px;
-            /* Adjust positioning to truly center the mega-menu on the viewport */
             position: absolute;
             left: 50%;
             transform: translateX(-50%) scaleY(0);
@@ -352,29 +409,24 @@
             visibility: hidden;
             transition: all 0.3s ease-out;
 
-            /* Re-added min-height to ensure vertical space for background */
             min-height: 350px;
 
-            /* Added styling for background image visibility */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
 
-        /* Corrected hover state for centered mega menu */
         .main-menu .mega-menu:hover>.submenu {
             opacity: 1;
             visibility: visible;
             transform: translateX(-50%) scaleY(1);
         }
 
-        /* Cart Dropdown Hover Logic for Desktop */
         .group:hover .mini-cart {
             opacity: 1;
             visibility: visible;
         }
 
-        /* OS Button Pseudo-element Hover Animation */
         .os-btn {
             position: relative;
             overflow: hidden;
@@ -390,7 +442,6 @@
             width: 100%;
             height: 0;
             background-color: #bc8246;
-            /* theme-primary */
             z-index: -1;
             transition: all 0.3s ease-out 0s;
         }
@@ -408,7 +459,6 @@
             border-color: #bc8246;
         }
 
-        /* Search Overlay Position and Transition */
         .header__search {
             position: fixed;
             top: 0;
@@ -419,18 +469,15 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-            /* FIX: Prevent accidental clicks when closed */
             pointer-events: none;
         }
 
         .header__search.search-opened {
             opacity: 1;
             visibility: visible;
-            /* FIX: Allow interaction when open */
             pointer-events: auto;
         }
 
-        /* Sidebar (Extra Info) Position and Transition (Uses custom cubic-bezier) */
         .extra__info {
             position: fixed;
             top: 0;
@@ -444,7 +491,6 @@
             transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
         }
 
-        /* Adjusted right property for smooth transition on mobile */
         @media (max-width: 640px) {
             .extra__info {
                 width: 90%;
@@ -460,13 +506,11 @@
             right: 0;
         }
 
-        /* Body Overlay */
         .body-overlay {
             transition: all 0.3s ease-out 0s;
             opacity: 0;
             visibility: hidden;
             z-index: 9998;
-            /* Below sidebar/search */
         }
 
         .body-overlay.opened {
@@ -474,7 +518,6 @@
             visibility: visible;
         }
 
-        /* Mobile Menu List Styling */
         .side-mobile-menu ul {
             padding-left: 0;
         }
@@ -502,7 +545,6 @@
             padding-left: 5px;
         }
 
-        /* Metis Menu Collapse/Show State */
         .side-mobile-menu .mm-collapse:not(.mm-show) {
             display: none;
         }
@@ -525,10 +567,8 @@
             font-size: 14px;
         }
 
-        /* Styling for the dropdown icon (chevron) */
         .side-mobile-menu .has-dropdown>a::after {
             content: '\f078';
-            /* Chevron down icon */
             font-family: 'Font Awesome 5 Pro';
             font-weight: 900;
             transition: transform 0.3s;
@@ -541,38 +581,30 @@
 
 
 
-        /* Base styles for the slider wrapper */
         .slider__area {
             position: relative;
             overflow: hidden;
         }
 
-        /* --- CUSTOM OS BUTTON STYLES (from user request) --- */
         .os-btn {
             position: relative;
             display: inline-flex;
-            /* Use inline-flex for reliable centering */
             text-transform: uppercase;
             text-align: center;
             font-weight: 600;
             height: 50px;
             padding: 0 42px;
             border: 2px solid #ebebeb;
-            /* Default border color */
             color: #323232;
             background: transparent;
-            /* Default background */
             z-index: 1;
             font-size: 12px;
-            /* Ensure the content inside is centered (overrides old line-height method) */
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
             border-radius: 0.5rem;
-            /* Added rounded-lg equivalent for aesthetics */
         }
 
-        /* Custom hover behavior added via CSS :hover selector */
         .os-btn:hover {
             color: #ffffff !important;
             border-color: #bc8246 !important;
@@ -583,11 +615,6 @@
             border-color: #323232;
         }
 
-        /* os-btn-2 hover is now covered by .os-btn:hover, ensuring color consistency */
-        /* --- END CUSTOM OS BUTTON STYLES --- */
-
-
-        /* Required for the jQuery sticky logic: ensures the sticky header toggles smoothly */
         .fixed {
             position: fixed;
         }
@@ -596,7 +623,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Custom styles for the search overlay to match the original structure's positioning/visibility */
         #header-search {
             position: fixed;
             top: 0;
@@ -607,74 +633,68 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
-            /* FIX: Prevent accidental clicks from triggering close logic beneath when closed */
             pointer-events: none;
         }
 
         #header-search.search-opened {
             opacity: 1;
             visibility: visible;
-            /* FIX: Allow interaction when open */
             pointer-events: auto;
         }
 
-        /* Define the custom class for the cart visibility toggle (activated by JS) */
         .is-open {
             visibility: visible !important;
             opacity: 1 !important;
             transform: translateY(0) !important;
         }
 
-        /* Responsive Scroll Height overrides using @apply */
         .cart-list-scroll {
-            /* Default height for screens < 576px */
             @apply max-h-[165px];
         }
 
         @media (min-width: 576px) and (max-width: 767px) {
             .cart-list-scroll {
-                /* Same as above for this range */
                 @apply max-h-[165px];
             }
         }
 
         @media (min-width: 768px) and (max-width: 991px) {
             .cart-list-scroll {
-                /* For md tablets */
                 @apply max-h-[200px];
             }
         }
 
-        /* Standard height for larger desktops (992px+) */
         @media (min-width: 992px) {
             .cart-list-scroll {
                 @apply max-h-[350px];
             }
         }
 
-        /* Custom Scrollbar Styling (Optional, for aesthetic only) */
         .custom-scrollbar::-webkit-scrollbar {
             width: 6px;
         }
 
         .custom-scrollbar::-webkit-scrollbar-thumb {
             background: #d1d5db;
-            /* gray-300 */
             border-radius: 3px;
         }
 
         .custom-scrollbar::-webkit-scrollbar-track {
             background: #f3f4f6;
-            /* gray-100 */
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
 
+
 <body class="text-[14px] font-normal text-[#848b8a] leading-[24px]">
 
-    <!-- Preloader (Initial State: Visible, will be hidden by JS) -->
+    <div id="alert" class="hidden fixed top-32 left-0 z-[99999] w-full flex justify-center items-center">
+    </div>
+
+
+
     <div id="loading" class="fixed inset-0 bg-white z-[9999] flex items-center justify-center">
         <div id="loading-center" class="absolute inset-0 flex items-center justify-center">
             <div id="loading-center-absolute" class="relative flex">
@@ -836,115 +856,386 @@
             </div>
         </nav>
     </header>
+
     <main>
-        <section class="page__title-section page__title p-relative d-flex align-items-center"
-            data-background="https://html.storebuild.shop/outstock-prv/outstock/assets/img/page-title/page-title-1.jpg">
-            <div class="max-w-7xl mx-auto px-4 w-full">
-                <div class="grid grid-cols-12">
-                    <div class="col-span-12">
-                        <div class="page__title-inner text-center">
-                            <h1>Your Cart</h1>
-                            <div class="page__title-breadcrumb">
-                                <nav aria-label="breadcrumb">
-                                    <ol class="list-none p-0 m-0 space-x-2 inline-flex justify-center">
-                                        <li class="breadcrumb-item">
-                                            <a href="index.html" class="text-white hover:text-bc8246">Home</a>
-                                        </li>
-                                        <li class="breadcrumb-item active" aria-current="page">
-                                            <span class="text-bc8246">Cart</span>
-                                        </li>
-                                    </ol>
-                                </nav>
+
+        <section class="page__title-section bg-gray-900 bg-opacity-70"
+            data-background="assets/img/title/page-title-1.jpg"
+            style="background-image: url('assets/img/title/page-title-1.jpg'); background-blend-mode: multiply;">
+            <div class="container mx-auto px-4 w-full">
+                <div class="text-center">
+                    <h1 class="text-white text-4xl lg:text-5xl font-extrabold">Checkout</h1>
+                    <div class="page__title-breadcrumb pt-2">
+                        <nav aria-label="breadcrumb">
+                            <ol class="flex justify-center space-x-2 text-white">
+                                <li class="breadcrumb-item"><a href="index.html"
+                                        class="text-323232 hover:text-bc8246">Home / </a></li>
+                                <li class="text-gray-400">/</li>
+                                <li class="breadcrumb-item active text-bc8246" aria-current="page"> Checkout</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="coupon-area py-16">
+            <div class="container mx-auto px-4 w-full">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="md:col-span-1">
+                        <div class="coupon-accordion checkout-login-accordion">
+                            <h3 class="checkout-accordion-header">Returning customer? <span id="showlogin"
+                                    class="cursor-pointer hover:text-bc8246 transition">Click here to login</span></h3>
+                            <div id="checkout-login" class="coupon-content hidden">
+                                <div class="coupon-info">
+                                    <p class="coupon-text">Quisque gravida turpis sit amet nulla posuere lacinia. Cras
+                                        sed est sit amet ipsum luctus.</p>
+                                    <form action="#" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <p class="form-row-first">
+                                            <label>Username or email <span class="required">*</span></label>
+                                            <input type="text" class="form-input" />
+                                        </p>
+                                        <p class="form-row-last">
+                                            <label>Password <span class="required">*</span></label>
+                                            <input type="password" class="form-input" />
+                                        </p>
+                                        <p class="form-row flex items-center gap-4 sm:col-span-2 mt-4">
+                                            <button class="os-btn os-btn-black h-10 px-8" type="submit">Login</button>
+                                            <label class="flex items-center text-gray-700 text-sm">
+                                                <input type="checkbox"
+                                                    class="form-checkbox h-4 w-4 text-bc8246 rounded border-gray-300 focus:ring-bc8246 mr-2" />
+                                                Remember me
+                                            </label>
+                                        </p>
+                                        <p class="lost-password sm:col-span-2">
+                                            <a href="#">Lost your password?</a>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="coupon-accordion checkout-coupon-accordion">
+                            <h3 class="checkout-accordion-header">Have a coupon? <span id="showcoupon"
+                                    class="cursor-pointer hover:text-bc8246 transition">Click here to enter your
+                                    code</span></h3>
+                            <div id="checkout_coupon" class="coupon-content hidden">
+                                <div class="coupon-info">
+                                    <form action="#">
+                                        <p
+                                            class="checkout-coupon flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-2">
+                                            <input type="text" placeholder="Coupon Code" class="form-input" />
+                                            <button class="os-btn os-btn-black h-10 px-8 flex-shrink-0"
+                                                type="submit">Apply Coupon</button>
+                                        </p>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="cart-area py-20 lg:py-28">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="grid grid-cols-12 gap-6">
-                    <div class="col-span-12">
-                        <form action="#">
-                            <div class="overflow-x-auto shadow-md rounded-lg">
-                                <table class="cart-table w-full border-collapse bg-white">
-                                    <thead>
-                                        <tr>
-                                            <th class="product-thumbnail">Images</th>
-                                            <th class="cart-product-name">Product</th>
-                                            <th class="product-price">Unit Price</th>
-                                            <th class="product-quantity text-center">Quantity</th>
-                                            <th class="product-subtotal">Total</th>
-                                            <th class="product-remove">Remove</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="cart-items-container">
 
-                                    </tbody>
-                                </table>
-                            </div>
+        <section class="checkout-area pb-20">
+            <div class="container mx-auto px-4 w-full">
+                <form action="">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-                            <div class="grid grid-cols-12 mt-8">
-                                <div class="col-span-12">
-                                    <div class="coupon-all">
-                                        <div
-                                            class="coupon flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3 w-full sm:w-auto">
-                                            <input id="coupon_code" class="coupon-input w-full" name="coupon_code"
-                                                value="" placeholder="Coupon code" type="text">
-                                            <button
-                                                class="os-btn os-btn-black !h-[50px] !py-0 !px-8 flex-shrink-0 w-full sm:w-auto"
-                                                name="apply_coupon" type="submit">Apply coupon</button>
+                        <div class="lg:col-span-1">
+                            <div class="checkbox-form">
+                                <h3 class="checkout-section-title">Billing Details</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6">
+
+                                    <div class="md:col-span-2">
+                                        <div class="country-select form-group">
+                                            <label>Country <span class="required">*</span></label>
+                                            <div class="relative">
+                                                <select class="form-select">
+                                                    <option value="bangladesh">Bangladesh</option>
+                                                    <option value="algeria">Algeria</option>
+                                                    <option value="afghanistan">Afghanistan</option>
+                                                    <option value="ghana">Ghana</option>
+                                                    <option value="albania">Albania</option>
+                                                    <option value="bahrain">Bahrain</option>
+                                                    <option value="colombia">Colombia</option>
+                                                    <option value="dominican">Dominican Republic</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                        <div class="coupon2">
-                                            <button id="update_cart"
-                                                class="os-btn os-btn-black !h-[50px] !py-0 !px-8 w-full sm:w-auto"
-                                                name="update_cart" type="submit">Update cart</button>
+                                    </div>
+
+                                    <div class="checkout-form-list form-group">
+                                        <label>First Name <span class="required">*</span></label>
+                                        <input type="text" placeholder="" class="form-input" />
+                                    </div>
+                                    <div class="checkout-form-list form-group">
+                                        <label>Last Name <span class="required">*</span></label>
+                                        <input type="text" placeholder="" class="form-input" />
+                                    </div>
+
+                                    <div class="checkout-form-list form-group md:col-span-2">
+                                        <label>Company Name</label>
+                                        <input type="text" placeholder="" class="form-input" />
+                                    </div>
+                                    <div class="checkout-form-list form-group md:col-span-2">
+                                        <label>Address <span class="required">*</span></label>
+                                        <input type="text" placeholder="Street address" class="form-input mb-4" />
+                                        <input type="text" placeholder="Apartment, suite, unit etc. (optional)"
+                                            class="form-input" />
+                                    </div>
+                                    <div class="checkout-form-list form-group md:col-span-2">
+                                        <label>Town / City <span class="required">*</span></label>
+                                        <input type="text" placeholder="Town / City" class="form-input" />
+                                    </div>
+
+                                    <div class="checkout-form-list form-group">
+                                        <label>State / County <span class="required">*</span></label>
+                                        <input type="text" placeholder="" class="form-input" />
+                                    </div>
+                                    <div class="checkout-form-list form-group">
+                                        <label>Postcode / Zip <span class="required">*</span></label>
+                                        <input type="text" placeholder="Postcode / Zip" class="form-input" />
+                                    </div>
+                                    <div class="checkout-form-list form-group">
+                                        <label>Email Address <span class="required">*</span></label>
+                                        <input type="email" placeholder="" class="form-input" />
+                                    </div>
+                                    <div class="checkout-form-list form-group">
+                                        <label>Phone <span class="required">*</span></label>
+                                        <input type="text" placeholder="Phone" class="form-input" />
+                                    </div>
+
+                                    <div class="md:col-span-2">
+                                        <div class="checkout-form-list create-acc pt-4">
+                                            <label
+                                                class="inline-flex items-center text-gray-700 text-sm cursor-pointer">
+                                                <input id="cbox" type="checkbox"
+                                                    class="form-checkbox h-4 w-4 text-bc8246 rounded border-gray-300 focus:ring-bc8246 mr-2" />
+                                                Create an account?
+                                            </label>
+                                        </div>
+                                        <div id="cbox_info"
+                                            class="create-account hidden mt-4 p-4 border border-gray-200 rounded-lg bg-gray-50">
+                                            <p class="text-sm mb-4">Create an account by entering the information below.
+                                                If you are a returning customer please login at the top of the page.</p>
+                                            <label>Account password <span class="required">*</span></label>
+                                            <input type="password" placeholder="password" class="form-input mt-1" />
+                                        </div>
+                                    </div>
+
+                                    <div class="different-address md:col-span-2 mt-8">
+                                        <div class="ship-different-title">
+                                            <label
+                                                class="inline-flex items-center text-gray-700 text-lg font-medium cursor-pointer">
+                                                <input id="ship-box" type="checkbox"
+                                                    class="form-checkbox h-4 w-4 text-bc8246 rounded border-gray-300 focus:ring-bc8246 mr-2" />
+                                                Ship to a different address?
+                                            </label>
+                                        </div>
+                                        <div id="ship-box-info" class="hidden mt-4">
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6">
+                                                <div class="md:col-span-2">
+                                                    <div class="country-select form-group">
+                                                        <label>Country <span class="required">*</span></label>
+                                                        <div class="relative">
+                                                            <select class="form-select">
+                                                                <option value="bangladesh">Bangladesh</option>
+                                                                <option value="usa">USA</option>
+                                                                <option value="canada">Canada</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="checkout-form-list form-group">
+                                                    <label>First Name <span class="required">*</span></label>
+                                                    <input type="text" placeholder="" class="form-input" />
+                                                </div>
+                                                <div class="checkout-form-list form-group">
+                                                    <label>Last Name <span class="required">*</span></label>
+                                                    <input type="text" placeholder="" class="form-input" />
+                                                </div>
+                                                <div class="checkout-form-list form-group md:col-span-2">
+                                                    <label>Address <span class="required">*</span></label>
+                                                    <input type="text" placeholder="Street address"
+                                                        class="form-input mb-4" />
+                                                    <input type="text"
+                                                        placeholder="Apartment, suite, unit etc. (optional)"
+                                                        class="form-input" />
+                                                </div>
+                                                <div class="checkout-form-list form-group md:col-span-2">
+                                                    <label>Town / City <span class="required">*</span></label>
+                                                    <input type="text" placeholder="Town / City" class="form-input" />
+                                                </div>
+                                                <div class="checkout-form-list form-group md:col-span-2">
+                                                    <label>Postcode / Zip <span class="required">*</span></label>
+                                                    <input type="text" placeholder="Postcode / Zip"
+                                                        class="form-input" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="order-notes md:col-span-2 mt-8">
+                                        <div class="checkout-form-list form-group">
+                                            <label>Order Notes</label>
+                                            <textarea id="checkout-mess" cols="30" rows="5" class="form-textarea"
+                                                placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-1">
+                            <div class="your-order mb-30">
+                                <h3 class="checkout-section-title">Your order</h3>
+                                <div class="your-order-table overflow-x-auto">
+                                    <table class="w-full">
+                                        <thead>
+                                            <tr class="text-left">
+                                                <th class="product-name">Product</th>
+                                                <th class="product-total text-right">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="itemCheckout">
+
+                                        </tbody>
+                                        <tfoot>
+                                            <tr class="cart-subtotal">
+                                                <th class="py-3 font-medium text-gray-700">Cart Subtotal</th>
+                                                <td class="text-right py-3 font-semibold text-323232"><span
+                                                        id="checkoutAmmount" class="amount">$00.00</span></td>
+                                            </tr>
+                                            <tr class="shipping">
+                                                <th class="py-3 align-top font-medium text-gray-700">Shipping</th>
+                                                <td class="py-3 text-right">
+                                                    <ul class="space-y-2">
+                                                        <li class="flex justify-end items-center">
+                                                            <input type="radio" id="flat_rate" name="shipping_method"
+                                                                checked class="form-radio h-4 w-4 text-bc8246 mr-2" />
+                                                            <label for="flat_rate" class="text-gray-700 text-sm">
+                                                                Flat Rate: <span
+                                                                    class="amount font-semibold text-323232">$7.00</span>
+                                                            </label>
+                                                        </li>
+                                                        <li class="flex justify-end items-center">
+                                                            <input type="radio" id="free_shipping"
+                                                                name="shipping_method"
+                                                                class="form-radio h-4 w-4 text-bc8246 mr-2" />
+                                                            <label for="free_shipping"
+                                                                class="text-gray-700 text-sm">Free Shipping</label>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="order-total">
+                                                <th class="py-4 text-lg font-bold text-323232">Order Total</th>
+                                                <td class="text-right py-4">
+                                                    <strong><span id="orderTotal" class="amount">
+                                                            $00.00</span></strong>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+
+                                <div class="payment-method mt-8">
+                                    <div class="space-y-3" id="payment-accordion">
+
+                                        <div class="card border border-gray-200 rounded-lg overflow-hidden">
+                                            <div class="card-header p-4 bg-gray-50 border-b border-gray-200 active"
+                                                id="headingOne">
+                                                <h5 class="mb-0">
+                                                    <button class="btn-link payment-toggle flex w-full text-left"
+                                                        type="button" data-target="#collapseOne" aria-expanded="true">
+                                                        Direct Bank Transfer
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseOne" class="payment-content p-4 bg-white"
+                                                data-parent="#payment-accordion">
+                                                <div class="card-body">
+                                                    Make your payment directly into our bank account. Please use your
+                                                    Order ID as the payment reference. Your order won’t be shipped until
+                                                    the funds have cleared in our account.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card border border-gray-200 rounded-lg overflow-hidden">
+                                            <div class="card-header p-4 bg-white border-b border-gray-200"
+                                                id="headingTwo">
+                                                <h5 class="mb-0">
+                                                    <button
+                                                        class="btn-link payment-toggle flex w-full text-left collapsed"
+                                                        type="button" data-target="#collapseTwo" aria-expanded="false">
+                                                        Cheque Payment
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseTwo" class="payment-content hidden p-4 bg-white"
+                                                data-parent="#payment-accordion">
+                                                <div class="card-body">
+                                                    Please send your cheque to Store Name, Store Street, Store Town,
+                                                    Store State / County, Store Postcode.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card border border-gray-200 rounded-lg overflow-hidden">
+                                            <div class="card-header p-4 bg-white border-b border-gray-200"
+                                                id="headingThree">
+                                                <h5 class="mb-0">
+                                                    <button
+                                                        class="btn-link payment-toggle flex w-full text-left collapsed"
+                                                        type="button" data-target="#collapseThree"
+                                                        aria-expanded="false">
+                                                        PayPal
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseThree" class="payment-content hidden p-4 bg-white"
+                                                data-parent="#payment-accordion">
+                                                <div class="card-body">
+                                                    Pay via PayPal; you can pay with your credit card if you don’t have
+                                                    a PayPal account.
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="grid grid-cols-12 mt-12">
-                                <div class="col-span-12 md:col-span-5 md:col-start-8">
-                                    <div class="cart-page-total">
-                                        <h2>Cart totals</h2>
-                                        <ul class="list-none p-0 m-0">
-                                            <li>Subtotal <span id="subtotals" class="font-normal">$00.00</span></li>
-                                            <li>Total <span id="total" class="font-bold">$00.00</span></li>
-                                        </ul>
-                                        <a class="os-btn os-btn-2 cart-page-total border border-2"
-                                            href="checkout.html">Proceed to checkout</a>
-                                    </div>
+                                <div class="order-button-payment mt-10 ">
+                                    <button id="orderbtn" class="os-btn os-btn-black h-12 w-full">Place
+                                        order</button>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </section>
     </main>
 
-    <!-- Footer Section -->
     <section class="bg-gray-900 text-[#ffffffb6] font-extralight">
         <div class="container mx-auto px-4 py-12 md:pt-16 lg:pt-24 lg:pb-16">
-            <!-- FIX: Added md:grid-cols-12 and updated col spans for responsive layout -->
             <div class="grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-8">
 
-                <!-- Logo Block -->
                 <div class="md:col-span-12 lg:col-span-6 text-center lg:text-left">
                     <div class="mb-6">
-                        <!-- Logo is centered via text-center on mobile -->
                         <a href="index.html">
                             <img src="assets/img/logo/logo-2.png" alt="logo" class="h-10 w-auto mx-auto lg:mx-0">
                         </a>
                     </div>
                     <div>
-                        <!-- Text content is centered on mobile, left-aligned on desktop -->
-                        <p class="leading-relaxed">Outstock is a premium Templates theme with advanced admin module.
-                            It’s
-                            extremely customizable, easy to use and fully responsive and retina ready.</p>
+                        <p class="leading-relaxed">Shopsyfy is your trusted online store for quality products at
+                            affordable prices. We’re dedicated to giving you a smooth shopping experience, fast
+                            delivery, and excellent customer support. Discover the latest trends and shop with
+                            confidence — anytime, anywhere.</p>
                         <div class="mt-6">
-                            <!-- List items need manual text alignment overrides since their parent is text-center -->
                             <ul class="space-y-4 inline-block text-left">
                                 <li class="flex items-start">
                                     <div class="flex-shrink-0 mr-4 mt-1">
@@ -959,7 +1250,7 @@
                                         <i class="fal fa-envelope-open-text w-5 text-center"></i>
                                     </div>
                                     <div>
-                                        <span>Email: Contact@outstock.com</span>
+                                        <span>Email: Contact@Shopsyfy.com</span>
                                     </div>
                                 </li>
                                 <li class="flex items-start">
@@ -967,7 +1258,7 @@
                                         <i class="fal fa-phone-alt w-5 text-center"></i>
                                     </div>
                                     <div>
-                                        <span>Phone Number: (800) 123 456 789</span>
+                                        <span>Phone Number: (+880) 123 456 789</span>
                                     </div>
                                 </li>
                             </ul>
@@ -975,8 +1266,6 @@
                     </div>
                 </div>
 
-                <!-- Information Block -->
-                <!-- MD: Takes 6 columns (half-width) to sit next to Customer Service -->
                 <div class="md:col-span-6 lg:col-span-3 text-center lg:text-left">
                     <div class="mb-6">
                         <h5 class="text-lg font-semibold text-white">Information</h5>
@@ -992,8 +1281,6 @@
                     </div>
                 </div>
 
-                <!-- Customer Service Block -->
-                <!-- MD: Takes 6 columns (half-width) to sit next to Information -->
                 <div class="md:col-span-6 lg:col-span-3 text-center lg:text-left">
                     <div class="mb-6">
                         <h5 class="text-lg font-semibold text-white">Customer Service</h5>
@@ -1014,13 +1301,12 @@
 
         <div class="border-t border-gray-700 py-8">
             <div class="container mx-auto px-4">
-                <!-- Copyright Bar already uses text-center lg:text-left -->
                 <div class="flex flex-col lg:flex-row justify-between items-center">
 
                     <div class="mb-4 lg:mb-0">
                         <p class="text-sm text-center lg:text-left">
                             Copyright © <a href="index.html"
-                                class="font-semibold hover:text-white hover:underline">Outstock</a> all rights reserved.
+                                class="font-semibold hover:text-white hover:underline">Shopsyfy</a> all rights reserved.
                             Powered by <a href="index.html"
                                 class="font-semibold hover:text-white hover:underline">Meheraj & Tasif</a>
                         </p>
@@ -1046,8 +1332,6 @@
         </div>
     </section>
 
-    <!-- FLOATING UTILITY COMPONENTS (Search, Overlay, Scroll Top) -->
-    <!-- Search Overlay -->
     <section id="header-search" class="header__search bg-white flex items-center">
         <div class="max-w-7xl mx-auto px-4 w-full">
             <div class="flex flex-wrap justify-center">
@@ -1055,7 +1339,6 @@
                     <div class="text-center">
                         <form action="#">
                             <div class="mb-[35px] sm:mb-5">
-                                <!-- Close Button logic is handled by jQuery using id="header__search-btn-close" -->
                                 <button type="button" id="header__search-btn-close"
                                     class="text-lg text-[#bc8246] hover:text-gray-700">
                                     <svg class="w-6 h-6 inline-block" fill="none" viewBox="0 0 24 24"
@@ -1081,7 +1364,6 @@
                                     class="h-[50px] w-full border-none px-[15px] pr-[30px] border-b-2 border-[#ebebeb] focus:border-b-[#bc8246] placeholder:text-[#444] outline-none transition-colors duration-300">
                                 <button type="submit"
                                     class="absolute top-0 right-0 h-[50px] w-[50px] text-center text-lg bg-transparent text-[#323232] hover:text-[#bc8246] transition-colors duration-300">
-                                    <!-- SEARCH BUTTON ICON (Fixed to SVG) -->
                                     <svg class="w-5 h-5 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -1096,41 +1378,30 @@
     </section>
 
 
-    <!-- Body Overlay (for mobile menu and search) -->
-    <!-- Added 'hidden' utility since jQuery's toggleOverlay logic assumes it starts invisible -->
     <div class="body-overlay hidden fixed inset-0 bg-black/50 h-full w-full z-[9998]"></div>
 
-    <!-- Scroll Top Button -->
     <div class="scroll-up fixed right-[30px] bottom-[30px] w-10 h-10 leading-10 text-center text-white bg-[#bc8246] rounded-full shadow-lg hover:bg-[#323232] transition-colors duration-300 cursor-pointer z-[999]"
         id="scroll" style="display: none;">
         <a href="javascript:void(0);" class="block text-white"><i class="fas fa-level-up-alt"></i></a>
     </div>
 
 
-    <!-- My JS -->
 
     <script src="./js/cartHandler.js"></script>
+    <script src="./js/checkout.js"></script>
+
     <script>
-        cartPageInit();
+        renderCart(1);
     </script>
-
-
-    <!-- Footer Ends Here -->
-    <!-- Script Loading Order Fix: Load jQuery first, then MetisMenu (INLINED), then your custom script -->
-
-    <!-- START: Injected Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
 
-    <!-- Drag to scroll JS -->
     <script>
-        // Find ALL elements that have the class "drag-scroll"
         const sliders = document.querySelectorAll('.drag-scroll');
 
-        // Attach the drag-to-scroll behavior to EACH slider
         sliders.forEach(slider => {
             let isDown = false;
             let startX;
@@ -1140,7 +1411,6 @@
                 isDown = true;
                 slider.classList.add('active:cursor-grabbing');
 
-                // Prevents text selection and image dragging
                 e.preventDefault();
 
                 startX = e.pageX - slider.offsetLeft;
@@ -1160,23 +1430,20 @@
             slider.addEventListener('mousemove', (e) => {
                 if (!isDown) return;
 
-                // Prevents text selection while dragging
                 e.preventDefault();
 
                 const x = e.pageX - slider.offsetLeft;
-                const walk = (x - startX) * 2; // The '* 2' makes it scroll faster
+                const walk = (x - startX) * 2;
                 slider.scrollLeft = scrollLeft - walk;
             });
 
-            // Add touch support for dragging on mobile devices
             slider.addEventListener('touchstart', (e) => {
                 isDown = true;
-                // e.preventDefault(); // Commented out to allow vertical scrolling
                 startX = e.touches[0].pageX - slider.offsetLeft;
                 scrollLeft = slider.scrollLeft;
             }, {
                 passive: true
-            }); // Use passive listener for better scroll performance
+            });
 
             slider.addEventListener('touchend', () => {
                 isDown = false;
@@ -1187,7 +1454,6 @@
 
                 const x = e.touches[0].pageX - slider.offsetLeft;
                 const walk = (x - startX) * 2;
-                // Horizontal scrolling
                 slider.scrollLeft = scrollLeft - walk;
             }, {
                 passive: true
@@ -1195,7 +1461,6 @@
         });
     </script>
 
-    <!-- INLINED metisMenu.min.js (v3.0.6) to prevent script loading errors -->
     <script>
         /*!
          * metismenu https://github.com/onokumus/metismenu#readme
@@ -1368,13 +1633,82 @@
     </script>
 
     <script>
-        /* ---------------------------------------
-   CART, HEADER, SEARCH, & MOBILE MENU LOGIC
-------------------------------------------*/
-        // --- Cart & Header Functionality Setup ---
+        function setupToggle(triggerId, targetId, useCheckbox = false) {
+            const trigger = document.getElementById(triggerId);
+            const target = document.getElementById(targetId);
+
+            if (trigger && target) {
+                const toggleVisibility = (open) => {
+                    if (open) {
+                        target.classList.remove('hidden');
+                    } else {
+                        target.classList.add('hidden');
+                    }
+                };
+
+                if (useCheckbox) {
+                    trigger.addEventListener('change', () => {
+                        toggleVisibility(trigger.checked);
+                    });
+                    toggleVisibility(trigger.checked);
+                } else {
+                    trigger.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        target.classList.toggle('hidden');
+                    });
+                }
+            }
+        }
+
+        function setupPaymentAccordion() {
+            const accordionContainer = document.getElementById('payment-accordion');
+            if (!accordionContainer) return;
+
+            const toggles = accordionContainer.querySelectorAll('.payment-toggle');
+
+            accordionContainer.querySelectorAll('.card-header').forEach(header => {
+                const content = document.querySelector(header.querySelector('.payment-toggle').dataset.target);
+                if (content) {
+                    if (header.classList.contains('active')) {
+                        content.classList.remove('hidden');
+                    } else {
+                        content.classList.add('hidden');
+                    }
+                }
+            });
+
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = toggle.getAttribute('data-target');
+                    const targetContent = document.querySelector(targetId);
+                    const currentHeader = toggle.closest('.card-header');
+
+                    if (!targetContent) return;
+
+                    const isOpening = targetContent.classList.contains('hidden');
+
+                    // Close all others
+                    accordionContainer.querySelectorAll('.payment-content').forEach(content => {
+                        content.classList.add('hidden');
+                        content.closest('.card').querySelector('.card-header').classList.remove(
+                            'active');
+                    });
+
+                    // Open/close target
+                    if (isOpening) {
+                        targetContent.classList.remove('hidden');
+                        currentHeader.classList.add('active');
+                    } else {
+                        targetContent.classList.add('hidden');
+                        currentHeader.classList.remove('active');
+                    }
+                });
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
 
-            // --- Element References ---
             const cartToggle = document.getElementById('cart-toggle');
             const miniCart = document.getElementById('mini-cart');
             const cartContainer = document.getElementById('cart-dropdown-container');
@@ -1383,15 +1717,14 @@
             const searchOverlay = document.getElementById('header-search');
             const searchCloseBtn = document.getElementById('header__search-btn-close');
             const bodyOverlay = document.querySelector('.body-overlay');
+            const mobileNav = document.getElementById('mobile-menu-2');
 
-            // --- Cart Toggle Function ---
             function toggleCart() {
                 if (miniCart) {
                     miniCart.classList.toggle('is-open');
                 }
             }
 
-            // --- Event Listeners ---
             if (cartToggle) {
                 cartToggle.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -1400,7 +1733,6 @@
                 });
             }
 
-            // --- Search Overlay Open/Close Logic ---
             function toggleSearch(open = true) {
                 if (!searchOverlay) return;
                 if (open) {
@@ -1427,18 +1759,21 @@
             }
 
             if (bodyOverlay) {
-                bodyOverlay.addEventListener('click', () => toggleSearch(false));
-            }
-
-            // --- Mobile Menu Toggle Placeholder ---
-            if (mobileMenuButton) {
-                mobileMenuButton.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    console.log("Mobile menu toggle triggered.");
+                bodyOverlay.addEventListener('click', () => {
+                    toggleSearch(false);
+                    if (mobileNav && !mobileNav.classList.contains('hidden')) {
+                        mobileNav.classList.add('hidden');
+                    }
                 });
             }
 
-            // --- Click outside cart closes it ---
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    mobileNav.classList.toggle('hidden');
+                });
+            }
+
             document.addEventListener('click', (e) => {
                 if (cartContainer && miniCart && !cartContainer.contains(e.target) && miniCart.classList
                     .contains('is-open')) {
@@ -1450,7 +1785,6 @@
                 miniCart.addEventListener('click', (e) => e.stopPropagation());
             }
 
-            // --- Cart Quantity Plus/Minus Functionality ---
             function cartPlusMinus() {
                 const quantityContainers = document.querySelectorAll('.cart-plus-minus');
 
@@ -1461,7 +1795,6 @@
 
                     if (!minusBtn || !plusBtn || !input) return;
 
-                    // Decrease quantity
                     minusBtn.addEventListener('click', () => {
                         let currentValue = parseInt(input.value);
                         if (currentValue > 1) {
@@ -1469,7 +1802,6 @@
                         }
                     });
 
-                    // Increase quantity
                     plusBtn.addEventListener('click', () => {
                         let currentValue = parseInt(input.value);
                         input.value = currentValue + 1;
@@ -1477,24 +1809,24 @@
                 });
             }
 
-            // Initialize quantity controls
             cartPlusMinus();
+
+            setupToggle('showlogin', 'checkout-login');
+            setupToggle('showcoupon', 'checkout_coupon');
+            setupToggle('cbox', 'cbox_info', true);
+            setupToggle('ship-box', 'ship-box-info', true);
+            setupPaymentAccordion();
         });
     </script>
 
-    <!-- ---------------------------------------
-     JQUERY-DEPENDENT INITIALIZATIONS
------------------------------------------- -->
     <script>
         (function ($) {
             "use strict";
 
-            // --- Preloader (matches your #loading element) ---
             $(window).on('load', function () {
                 $('#loading').fadeOut(500);
             });
 
-            // --- Sticky Header ---
             $(window).on('scroll', function () {
                 const header = $('#header-sticky');
                 if ($(this).scrollTop() > 50) {
@@ -1504,14 +1836,12 @@
                 }
             });
 
-            // --- Data-Background Initialization ---
             $("[data-background]").each(function () {
                 $(this).css("background-image", "url(" + $(this).attr("data-background") + ")");
             });
 
         })(jQuery);
     </script>
-
 
 
 </body>

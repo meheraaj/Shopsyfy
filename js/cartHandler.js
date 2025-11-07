@@ -42,7 +42,7 @@ async function removeItem(imgUrl, price) {
 }
 
 //  Render all cart items
-async function renderCart() {
+async function renderCart(disableBtn = 0) {
   let toalPrice = 0;
   const cartBox = document.getElementById("cart");
   if (!cartBox) return;
@@ -73,16 +73,24 @@ async function renderCart() {
           <div class="cart-content text-left space-y-1">
             <h5 class="text-sm font-medium">
               <a href="product-details.html"
-                 class="text-gray-700 hover:text-[#8a8f6a] transition">${cart[i].name}</a>
+                 class="text-gray-700 hover:text-[#8a8f6a] transition">${
+                   cart[i].name
+                 }</a>
             </h5>
             <div class="cart-price text-sm font-normal text-gray-500">
-              <span class="ammount mr-1 text-gray-500">${cart[i].quantity} <i class="fas fa-times text-xs"></i></span>
-              <span class="price text-[#323232] font-semibold">${cart[i].price}</span>
+              <span class="ammount mr-1 text-gray-500">${
+                cart[i].quantity
+              } <i class="fas fa-times text-xs"></i></span>
+              <span class="price text-[#323232] font-semibold">${
+                cart[i].price
+              }</span>
             </div>
           </div>
         </div>
         <div class="del-icon pt-1">
-          <button class="deleteItem text-gray-400 hover:text-red-500 transition"
+          <button ${
+            disableBtn ? "disabled" : undefined
+          } class="deleteItem text-gray-400 hover:text-red-500 transition"
                   data-img="${cart[i].img}" data-price="${cart[i].price}">
             ❌
           </button>
