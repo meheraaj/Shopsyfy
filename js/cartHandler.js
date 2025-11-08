@@ -10,19 +10,17 @@ async function getCart() {
 async function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
-async function setBal(newBal) {
-  localStorage.setItem("balance", newBal);
+async function setBal(newBal, u = 0) {
+  let userCredentials = JSON.parse(localStorage.getItem("userProfile"));
+  userCredentials.balance = newBal;
+  localStorage.setItem("userProfile", JSON.stringify(userCredentials));
   balance = parseFloat(newBal);
   return balance;
 }
 
 async function getBal() {
-  let bal = localStorage.getItem("balance");
-
-  if (bal === null || bal == undefined) {
-    await setBal("1000");
-    bal = "1000";
-  }
+  let userCredentials = JSON.parse(localStorage.getItem("userProfile"));
+  let bal = userCredentials.balance || 0;
 
   balance = parseFloat(bal);
   document.getElementById("balance").innerText = "$" + balance.toString();
@@ -345,3 +343,71 @@ function updateCartSubtotal() {
   if (subtotalBox) subtotalBox.textContent = `$${total.toFixed(2)}`;
 }
 getBal();
+
+getProfile();
+
+if (userCredentials.email && userCredentials.password) {
+  renderAuthArea();
+} else {
+  authArea.innerHTML = `
+            <a href="login.html" class="os-btn border border-[#bc8246] text-[#bc8246] px-4 py-2 rounded hover:text-white hover:bg-[#bc8246] transition-all duration-300">
+                Login
+            </a>
+        `;
+  document.body.innerHTML += `<div id="loginpopup" class="fixed z-[9999999] top-20 left-1/2 transform -translate-x-1/2 w-[90%] max-w-md 
+            bg-white border border-gray-200 rounded-2xl shadow-lg 
+            flex items-center justify-between gap-4 px-5 py-4
+            text-gray-700">
+
+        <!-- Icon + Text -->
+        <div class="flex items-center gap-3">
+            <div class="p-2 bg-[#bc8246]/10 text-[#bc8246] rounded-full">
+                <i class="fa-solid fa-circle-exclamation"></i>
+            </div>
+            <p class="text-sm">
+                You need to <span class="font-semibold text-[#323232]">log in</span> to continue.
+            </p>
+        </div>
+
+        <!-- Login Button -->
+        <a href="login.html" class="bg-[#bc8246] text-white text-sm px-4 py-2 rounded-lg font-medium 
+            hover:bg-[#a96d38] transition">
+            Login
+        </a>
+    </div>`;
+}
+
+function renderAuthArea() {
+  const authArea = document.getElementById("auth-area");
+  authArea.innerHTML = "";
+
+  // Logged in → show profile icon + dropdown
+  authArea.innerHTML = `
+            <div class="relative group">
+                <button class="flex items-center space-x-2 pt-[27px] pb-[30px] hover:text-[#bc8246]">
+                    <svg class="w-6 h-6 text-[#323232]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M5.121 17.804A9 9 0 1118.88 6.196 9 9 0 015.12 17.804z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  <a href='./profile.html'>${
+                    userCredentials.fname || userCredentials.lname
+                      ? userCredentials.fname + " " + userCredentials.lname
+                      : userCredentials.email
+                  }</a>
+                </button>
+                <ul class="absolute right-0 mt-1 hidden group-hover:block bg-white border border-gray-200 shadow-lg rounded-md w-32 text-left z-[10020]">
+                    <li><a href="profile.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a></li>
+                    <li><button id="logout-btn" class="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</button></li>
+                </ul>
+            </div>
+        `;
+
+  document.getElementById("logout-btn").addEventListener("click", () => {
+    logout();
+    renderAuthArea();
+  });
+
+  // Not logged in → show login button
+}

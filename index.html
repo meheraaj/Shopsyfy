@@ -659,6 +659,7 @@
 
 <body class="text-[14px] font-normal text-[#848b8a] leading-[24px]">
 
+
     <!-- Preloader (Initial State: Visible, will be hidden by JS) -->
     <div id="loading" class="fixed inset-0 bg-white z-[9999] flex items-center justify-center">
         <div id="loading-center" class="absolute inset-0 flex items-center justify-center">
@@ -670,141 +671,65 @@
         </div>
     </div>
 
+
+    <!-- HEADER -->
     <header id="header-sticky" class="top-0 z-20">
         <nav class="bg-[#f5f5f5] border-b border-gray-200">
             <div class="max-w-7xl mx-auto px-4">
                 <div class="flex flex-wrap items-center justify-between h-auto">
-                    <!-- 
-                    FIX START: Removed the w-auto/md:w-4/12/lg:w-3/12 classes from the Logo container 
-                    and the w-auto/md:w-8/12/lg:w-9/12 wrapper,
-                    and instead used flex-grow to make the layout behave correctly.
-                    This ensures the Logo and Actions are properly justified on mobile.
-                -->
 
-                    <!-- Group 1: Left (Logo) - Now responsive only up to md, then fixed width on lg -->
+                    <!-- Logo -->
                     <div class="flex-shrink-0 px-4 py-3 lg:w-3/12">
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="assets/img/logo/logo.png" alt="logo">
-                            </a>
-                        </div>
+                        <a href="index.html">
+                            <img src="assets/img/logo/logo.png" alt="logo">
+                        </a>
                     </div>
 
-                    <!-- Main Wrapper for Center (Nav) & Right (Actions) - Uses flex-grow to fill middle space -->
+                    <!-- Nav Links -->
                     <div class="flex-grow md:flex-grow-0 lg:w-9/12 px-4">
                         <div class="relative flex justify-end lg:justify-between items-center">
 
-                            <!-- Group 2: Center (Navigation Links - Hidden on Mobile, Centered on Desktop) -->
+                            <!-- Desktop Nav -->
                             <div class="hidden lg:block">
-                                <nav>
-                                    <ul id="desktop-menu"
-                                        class="main-menu flex space-x-8 xl:space-x-10 list-none p-0 m-0">
-                                        <li>
-                                            <a href="/"
-                                                class="block text-[#323232] font-medium pt-[27px] pb-[30px] capitalize text-[#444] hover:text-[#bc8246] transition-all duration-300">Home</a>
-                                        </li>
-                                        <li>
-                                            <a href="#shop"
-                                                class="block text-[#444] font-medium pt-[27px] pb-[30px] capitalize hover:text-[#bc8246] transition-all duration-300">Shop</a>
-                                        </li>
-                                        <li>
-                                            <a href="#blog"
-                                                class="block text-[#444] font-medium pt-[27px] pb-[30px] capitalize hover:text-[#bc8246] transition-all duration-300">Blog</a>
-                                        </li>
-                                        <li>
-                                            <a href="#contact"
-                                                class="block text-[#444] font-medium pt-[27px] pb-[30px] capitalize hover:text-[#bc8246] transition-all duration-300">Contact</a>
-                                        </li>
-                                    </ul>
-                                </nav>
+                                <ul class="main-menu flex space-x-8 xl:space-x-10 list-none p-0 m-0">
+                                    <li><a href="index.html"
+                                            class="block text-[#444] font-medium pt-[27px] pb-[30px] hover:text-[#bc8246]">Home</a>
+                                    </li>
+                                    <li><a href="index.html#shop"
+                                            class="block text-[#444] font-medium pt-[27px] pb-[30px] hover:text-[#bc8246]">Shop</a>
+                                    </li>
+                                    <li><a href="index.html#blog"
+                                            class="block text-[#444] font-medium pt-[27px] pb-[30px] hover:text-[#bc8246]">Blog</a>
+                                    </li>
+                                    <li><a href="index.html#contact"
+                                            class="block text-[#444] font-medium pt-[27px] pb-[30px] hover:text-[#bc8246]">Contact</a>
+                                    </li>
+                                </ul>
                             </div>
 
-                            <!-- Group 3: Right (Search, Cart, Mobile Menu Button) -->
+                            <!-- Header Actions -->
                             <div class="header__action ml-4 flex-shrink-0">
                                 <ul class="flex items-center space-x-4 md:space-x-6 list-none p-0 m-0">
 
-                                    <!-- 1. Search Toggle -->
-                                    <li class="relative">
-                                        <button type="button" id="search-toggle"
-                                            class="search-toggle text-444 inline-block pt-[27px] pb-[30px] relative hover:text-bc8246 transition-colors duration-300">
-                                            <svg class="h-5 w-5 inline-block text-323232 mr-[3px]" fill="none"
+                                    <!-- Search Icon -->
+                                    <li>
+                                        <button id="search-toggle"
+                                            class="search-toggle inline-block pt-[27px] pb-[30px] hover:text-bc8246">
+                                            <svg class="h-5 w-5 inline-block text-323232" fill="none"
                                                 viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                             </svg>
-                                            <span class="hidden sm:inline">Search</span>
                                         </button>
                                     </li>
 
-                                    <!-- 2. Cart Link with Dropdown (The primary component) -->
-                                    <li id="cart-dropdown-container" class="relative">
-                                        <a href="javascript:void(0);" id="cart-toggle" class="cart inline-block relative cursor-pointer transition-colors duration-300 
-                                                text-444 hover:text-bc8246 pt-[27px] pb-[30px]">
+                                    <!-- ✅ Login/Profile Placeholder -->
+                                    <li id="auth-area" class="relative"></li>
 
-                                            <!-- SVG Icon (Shopping Bag) -->
-                                            <svg class="h-5 w-5 inline-block text-323232 mr-[3px]" fill="none"
-                                                viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                                            </svg>
-
-                                            <!-- Cart Text (Hidden on default/xs, shown on sm+) -->
-                                            <span class="hidden sm:inline">Cart</span>
-
-                                            <!-- Cart Count Text (Using simple text count (03)) -->
-                                            <span id="cart-count" class="text-sm ml-1">( 0 )</span>
-                                        </a>
-
-                                        <!-- Mini-Cart Dropdown Content -->
-                                        <div id="mini-cart" class="mini-cart-dropdown absolute top-full z-50 p-6 w-[350px] bg-white border border-gray-200 rounded-xl shadow-2xl transition-all duration-300 invisible opacity-0 translate-y-2 
-                                            
-                                            /* Mobile Positioning: Center on small screens (max-sm:), push to right on sm+ */
-                                            max-sm:w-[280px] max-sm:right-1/2 max-sm:transform max-sm:translate-x-1/2
-                                            sm:right-0 sm:translate-x-0
-                                        ">
-                                            <div class="mini-cart-inner">
-
-                                                <!-- List of Items (Scrollable Area) -->
-                                                <ul id="cart"
-                                                    class="mini-cart-list overflow-y-scroll custom-scrollbar cart-list-scroll space-y-7">
-
-
-
-                                                </ul>
-
-                                                <!-- Total Price -->
-                                                <div
-                                                    class="flex justify-between items-center pt-5 mt-5 border-t border-gray-900 mb-6 font-medium text-lg">
-                                                    <span class="text-323232">Subtotal:</span>
-                                                    <span id="subtotal_header"
-                                                        class="text-323232 font-bold">$00.00</span>
-
-                                                </div>
-                                                <!-- Current Balance -->
-                                                <div
-                                                    class="flex justify-between items-center pt-5 mt-5 border-t border-gray-900 mb-6 font-medium text-lg">
-                                                    <span class="text-323232">Total Balance:</span>
-                                                    <span id="balance" class="text-323232 font-bold">$1000.00</span>
-
-                                                </div>
-
-                                                <!-- Checkout Links -->
-                                                <div class="checkout-link space-y-3">
-                                                    <a href="cart.html"
-                                                        class="os-btn block w-full text-center py-3 rounded-full text-white bg-8a8f6a font-medium transition hover:bg-opacity-90 shadow-lg">View
-                                                        Cart</a>
-                                                    <a href="checkout.html"
-                                                        class="os-btn os-btn-black block w-full text-center py-3 rounded-full text-white bg-323232 font-medium transition hover:bg-gray-700 shadow-lg">Checkout</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <!-- 3. Mobile Menu Toggle (Only visible on screens smaller than lg) -->
+                                    <!-- Mobile Menu Button -->
                                     <li class="relative lg:hidden">
                                         <button id="mobile-menu-button-2" type="button"
-                                            class="mobile-menu-toggle text-444 inline-block pt-[27px] pb-[30px] hover:text-bc8246 transition-colors duration-300">
+                                            class="inline-block pt-[27px] pb-[30px] hover:text-bc8246">
                                             <svg class="h-6 w-6 text-323232" fill="none" viewBox="0 0 24 24"
                                                 stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -816,15 +741,19 @@
                             </div>
                         </div>
                     </div>
-                    <!-- FIX END -->
                 </div>
             </div>
+
+            <!-- Mobile Menu -->
             <div id="mobile-menu-2" class="hidden lg:hidden bg-white border-t border-gray-200">
                 <div class="px-4 py-3 space-y-2">
-                    <a href="#" class="block text-[#444] hover:text-[#bc8246] text-sm font-medium">Home</a>
-                    <a href="#" class="block text-[#444] hover:text-[#bc8246] text-sm font-medium">Shop</a>
-                    <a href="#" class="block text-[#444] hover:text-[#bc8246] text-sm font-medium">Blog</a>
-                    <a href="#" class="block text-[#444] hover:text-[#bc8246] text-sm font-medium">Contact</a>
+                    <a href="index.html" class="block text-[#444] hover:text-[#bc8246] text-sm font-medium">Home</a>
+                    <a href="index.html#shop"
+                        class="block text-[#444] hover:text-[#bc8246] text-sm font-medium">Shop</a>
+                    <a href="index.html#blog"
+                        class="block text-[#444] hover:text-[#bc8246] text-sm font-medium">Blog</a>
+                    <a href="index.html#contact"
+                        class="block text-[#444] hover:text-[#bc8246] text-sm font-medium">Contact</a>
                 </div>
             </div>
         </nav>
@@ -1405,6 +1334,7 @@
 
 
     <!-- My JS -->
+    <script src="./js/profile.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/cartHandler.js"></script>
     <!-- Cart Interactivity Logic (Moved from app_logic.js) -->

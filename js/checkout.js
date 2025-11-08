@@ -218,3 +218,29 @@ function renderAlert(text, bg = "bg-[#040714ab]") {
     document.getElementById("alert").innerHTML = "";
   }, 3000);
 }
+
+getProfile();
+
+let storedProfile = userCredentials;
+const userData = {
+  fname: storedProfile.fname || "",
+  lname: storedProfile.lname || "",
+  email: storedProfile.email || "",
+  //password: storedProfile.password || "",
+  phone: storedProfile.phone || "",
+  address: storedProfile.address || "",
+  city: storedProfile.city || "",
+  postal: storedProfile.postal || "",
+  country: storedProfile.country || "",
+};
+
+document.getElementById("country").querySelector("option").innerText =
+  userData.country;
+document.getElementById("fname").value = userData.fname;
+document.getElementById("lname").value = userData.lname;
+document.getElementById("address").value = userData.address;
+document.getElementById("city").value = userData.city;
+document.getElementById("state").value = userData.country;
+document.getElementById("number").value = userData.phone;
+document.getElementById("zip").value = userData.postal;
+document.getElementById("email").value = userData.email;
