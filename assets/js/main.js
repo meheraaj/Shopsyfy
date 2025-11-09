@@ -249,6 +249,9 @@ async function fillDatas() {
       prevEl: ".swiper-button-prev",
     },
     breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
       640: {
         slidesPerView: 2,
       },
@@ -333,3 +336,4 @@ async function fillDatas() {
   }
 }
 fillDatas();
+
