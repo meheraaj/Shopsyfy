@@ -4,32 +4,30 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Outstock</title>
+    <title>Shopsyfy</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- 1. SWIPER CSS (Required for Swiper.js functionality) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/fontAwesome5Pro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
-    <!-- Custom Tailwind Config for legacy colors and new default settings -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    // --- Merged Configuration ---
                     colors: {
                         'f5f5f5': '#f5f5f5',
-                        '323232': '#323232', // Used as primary dark text/button color
+                        '323232': '#323232',
                         '444': '#444444',
                         'bc8246': '#bc8246',
                         'c2c2c2': '#c2c2c2',
-                        '8a8f6a': '#8a8f6a', // Used as accent green color
+                        '8a8f6a': '#8a8f6a',
                         'ebebeb': '#ebebeb',
                     },
                     height: {
@@ -40,28 +38,17 @@
                         'hero-xl': '750px',
                         'hero-2xl': '925px',
                     },
-                    // Screens needed for the cart's responsive behavior
                     screens: {
                         'sm': '576px',
                         'md': '768px',
                         'lg': '1024px',
                     },
-                    // --- End Merged Configuration ---
                 }
             }
         }
     </script>
 
 
-
-    <!-- M -->
-    <!-- E -->
-    <!-- H -->
-    <!-- E -->
-    <!-- R -->
-    <!-- A -->
-    <!-- J -->
-    <!-- NEW CSS __MEHERAJ__ -->
     <style type="text/tailwindcss">
         .blog_post{
             @apply text-white;
@@ -72,12 +59,9 @@
         .desc{
             @apply px-10 text-[15px];
         }
-        /* .os-btn{
-            @apply w-1/4 self-center px-2 py-3 border-2 border-black text-[15px];
-        } */
         .os-btn {
-            @apply  self-center px-2 py-3 border-2 text-[15px]
-                border-[#323232] text-[#323232] bg-white 
+            @apply self-center px-2 py-3 border-2 text-[15px]
+                border-[#323232] text-[#323232] bg-white
                 transition-colors duration-300
                 hover:text-white hover:border-[#bc8246] hover:bg-[#bc8246];
         }
@@ -87,19 +71,17 @@
         .blog__item{
         @apply flex flex-col select-none ;
         }
-        /* --- FIX: Removed fixed width/height to ensure responsiveness via Swiper's slidesPerView --- */
         .blog__thumb{
-            @apply w-full h-auto; 
+            @apply w-full h-auto;
         }
         .blog__content{
-            @apply text-[1.3rem] text-[#00000083] mt-4 w-full h-auto; 
+            @apply text-[1.3rem] text-[#00000083] mt-4 w-full h-auto;
         }
-        /* --- END FIX --- */
         .blog__meta{
             @apply text-[0.8rem] py-2;
         }
         .blog__content p{
-               @apply text-[0.8rem] pb-5 
+                @apply text-[0.8rem] pb-5
         }
         .blog__content h4,.blog__content .os-btn{
             @apply text-black
@@ -112,10 +94,10 @@
             @apply hidden
         }
 
-      
-       .product__thumb{
+        
+        .product__thumb{
         @apply relative overflow-visible visible;
-       }
+        }
 
     .sale__item .product__thumb img {
     @apply block w-full h-[344px] transition-all duration-500 ease-in-out;
@@ -160,18 +142,14 @@
         main{
             @apply xl:px-[10%] 2xl:px-[15%]
         }
-  </style>
+    </style>
     <style>
-        /* Base Styles & Typography */
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
         body {
             font-family: 'Poppins', sans-serif;
         }
 
-        /* --- Custom Component Styles --- */
-
-        /* Preloader Styles - Added basic styles for visibility */
         #loading {
             z-index: 9999;
         }
@@ -181,24 +159,19 @@
             height: 100px;
         }
 
-        /* For Webkit browsers (Chrome, Safari, etc.) */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
 
-        /* For IE, Edge, and Firefox */
         .no-scrollbar {
             -ms-overflow-style: none;
-            /* IE and Edge */
             scrollbar-width: none;
-            /* Firefox */
         }
 
         .object {
             width: 25px;
             height: 25px;
             background-color: #bc8246;
-            /* theme-primary */
             border-radius: 50%;
             margin: 5px;
             display: inline-block;
@@ -230,14 +203,13 @@
             }
         }
 
-        /* Header Dropdown Hover Logic for Desktop */
+        /* Dropdown/Menu Animations */
         .main-menu .has-dropdown:hover>.submenu {
             visibility: visible;
             opacity: 1;
             transform: scaleY(1);
         }
 
-        /* Submenu styling - fixed positioning outside the hover scope */
         .submenu {
             position: absolute;
             top: 100%;
@@ -254,15 +226,12 @@
             transition: all 0.3s ease-out;
         }
 
-        /* Mega Menu Specific Styling - UPDATED */
         .mega-menu>.submenu {
             left: 0;
-            /* Reset left for full-width mega menu */
             min-width: 100vw;
             width: 100vw;
             max-width: none;
             padding: 40px 35px;
-            /* Adjust positioning to truly center the mega-menu on the viewport */
             position: absolute;
             left: 50%;
             transform: translateX(-50%) scaleY(0);
@@ -271,29 +240,25 @@
             visibility: hidden;
             transition: all 0.3s ease-out;
 
-            /* Re-added min-height to ensure vertical space for background */
             min-height: 350px;
 
-            /* Added styling for background image visibility */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
 
-        /* Corrected hover state for centered mega menu */
         .main-menu .mega-menu:hover>.submenu {
             opacity: 1;
             visibility: visible;
             transform: translateX(-50%) scaleY(1);
         }
 
-        /* Cart Dropdown Hover Logic for Desktop */
         .group:hover .mini-cart {
             opacity: 1;
             visibility: visible;
         }
 
-        /* OS Button Pseudo-element Hover Animation */
+        /* Buttons */
         .os-btn {
             position: relative;
             overflow: hidden;
@@ -309,7 +274,6 @@
             width: 100%;
             height: 0;
             background-color: #bc8246;
-            /* theme-primary */
             z-index: -1;
             transition: all 0.3s ease-out 0s;
         }
@@ -323,11 +287,17 @@
             border-color: #bc8246;
         }
 
+        .os-btn-black {
+            color: #ffffff;
+            background-color: #323232;
+            border-color: #323232;
+        }
+
         .os-btn-black:hover {
             border-color: #bc8246;
         }
 
-        /* Search Overlay Position and Transition */
+        /* Search Overlay */
         .header__search {
             position: fixed;
             top: 0;
@@ -338,62 +308,16 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-            /* FIX: Prevent accidental clicks when closed */
             pointer-events: none;
         }
 
         .header__search.search-opened {
             opacity: 1;
             visibility: visible;
-            /* FIX: Allow interaction when open */
             pointer-events: auto;
         }
 
-        /* Sidebar (Extra Info) Position and Transition (Uses custom cubic-bezier) */
-        .extra__info {
-            position: fixed;
-            top: 0;
-            right: -350px;
-            width: 350px;
-            height: 100%;
-            background: #ffffff;
-            padding: 30px;
-            box-shadow: -5px 0 20px -5px rgba(0, 0, 0, 0.5);
-            z-index: 10000;
-            transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-        }
 
-        /* Adjusted right property for smooth transition on mobile */
-        @media (max-width: 640px) {
-            .extra__info {
-                width: 90%;
-                right: -90%;
-            }
-
-            .extra__info.info-opened {
-                right: 0;
-            }
-        }
-
-        .extra__info.info-opened {
-            right: 0;
-        }
-
-        /* Body Overlay */
-        .body-overlay {
-            transition: all 0.3s ease-out 0s;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 9998;
-            /* Below sidebar/search */
-        }
-
-        .body-overlay.opened {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Mobile Menu List Styling */
         .side-mobile-menu ul {
             padding-left: 0;
         }
@@ -421,7 +345,6 @@
             padding-left: 5px;
         }
 
-        /* Metis Menu Collapse/Show State */
         .side-mobile-menu .mm-collapse:not(.mm-show) {
             display: none;
         }
@@ -444,10 +367,8 @@
             font-size: 14px;
         }
 
-        /* Styling for the dropdown icon (chevron) */
         .side-mobile-menu .has-dropdown>a::after {
             content: '\f078';
-            /* Chevron down icon */
             font-family: 'Font Awesome 5 Pro';
             font-weight: 900;
             transition: transform 0.3s;
@@ -458,92 +379,50 @@
             transform: rotate(-90deg);
         }
 
-
-
-        /* Base styles for the slider wrapper */
+        /* Swiper CSS */
         .slider__area {
             position: relative;
             overflow: hidden;
-        }
-
-        /* --- CUSTOM OS BUTTON STYLES (from user request) --- */
-        .os-btn {
-            position: relative;
-            display: inline-flex;
-            /* Use inline-flex for reliable centering */
-            text-transform: uppercase;
-            text-align: center;
-            font-weight: 600;
-            height: 50px;
-            padding: 0 42px;
-            border: 2px solid #ebebeb;
-            /* Default border color */
-            color: #323232;
-            background: transparent;
-            /* Default background */
-            z-index: 1;
-            font-size: 12px;
-            /* Ensure the content inside is centered (overrides old line-height method) */
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            border-radius: 0.5rem;
-            /* Added rounded-lg equivalent for aesthetics */
-        }
-
-        /* Custom hover behavior added via CSS :hover selector */
-        .os-btn:hover {
-            color: #ffffff !important;
-            border-color: #bc8246 !important;
-            background-color: #bc8246 !important;
         }
 
         .os-btn-2 {
             border-color: #323232;
         }
 
-        /* os-btn-2 hover is now covered by .os-btn:hover, ensuring color consistency */
-        /* --- END CUSTOM OS BUTTON STYLES --- */
-
-        /* --- CUSTOM BANNER STYLES (for image scale and content positioning) --- */
         .banner__thumb img {
             transition: transform 0.5s ease;
             width: 100%;
-            /* Ensure images fill their container */
             height: auto;
         }
 
         .banner__item:hover .banner__thumb img {
             transform: scale(1.1);
-            /* Image zoom effect on hover */
         }
 
-        /* Default vertical centering for banner content */
         .banner__content {
             top: 50%;
             transform: translateY(-50%);
-            /* Add transition for hover effect */
             transition: all 0.3s ease;
         }
 
-        /* Content slide effect on hover */
         .banner__item:hover .banner__content {
             top: 60%;
         }
 
-        /* --- END CUSTOM BANNER STYLES --- */
+        .hero-slider-active {
+            position: relative;
+        }
 
-        /* Swiper.js Pagination Dots Styling (Matching original design) */
-        .hero-slider-pagination {
+        .hero-slider-active .hero-slider-pagination {
             position: absolute;
-            bottom: 165px !important;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
+            bottom: 20px !important;
+            top: auto !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: auto !important;
             display: flex;
             justify-content: center;
-            /* FIX: Ensure 100% width for centering to work correctly */
-            width: 100%;
+            z-index: 10;
         }
 
         .hero-slider-pagination .swiper-pagination-bullet {
@@ -553,26 +432,20 @@
             border-radius: 50%;
             margin: 0 7px;
             opacity: 1;
-            /* Override swiper default */
             border: 2px solid transparent;
             transition: all 0.3s ease;
         }
 
-        /* Active dot state */
         .hero-slider-pagination .swiper-pagination-bullet-active {
             border-color: #bc8246;
-            /* Original primary accent color */
             background: #ffffff;
         }
 
-        /* Swiper.js Navigation Arrows Styling (Removed HTML, kept empty CSS for safety) */
         .swiper-button-prev,
         .swiper-button-next {
             display: none !important;
-            /* Force hide arrows */
         }
 
-        /* Required for the jQuery sticky logic: ensures the sticky header toggles smoothly */
         .fixed {
             position: fixed;
         }
@@ -581,7 +454,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Custom styles for the search overlay to match the original structure's positioning/visibility */
         #header-search {
             position: fixed;
             top: 0;
@@ -592,65 +464,69 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
-            /* FIX: Prevent accidental clicks from triggering close logic beneath when closed */
             pointer-events: none;
         }
 
         #header-search.search-opened {
             opacity: 1;
             visibility: visible;
-            /* FIX: Allow interaction when open */
             pointer-events: auto;
         }
 
-        /* Define the custom class for the cart visibility toggle (activated by JS) */
         .is-open {
             visibility: visible !important;
             opacity: 1 !important;
             transform: translateY(0) !important;
         }
 
-        /* Responsive Scroll Height overrides using @apply */
-        .cart-list-scroll {
-            /* Default height for screens < 576px */
-            @apply max-h-[165px];
-        }
 
-        @media (min-width: 576px) and (max-width: 767px) {
-            .cart-list-scroll {
-                /* Same as above for this range */
-                @apply max-h-[165px];
-            }
-        }
-
-        @media (min-width: 768px) and (max-width: 991px) {
-            .cart-list-scroll {
-                /* For md tablets */
-                @apply max-h-[200px];
-            }
-        }
-
-        /* Standard height for larger desktops (992px+) */
         @media (min-width: 992px) {
             .cart-list-scroll {
                 @apply max-h-[350px];
             }
         }
 
-        /* Custom Scrollbar Styling (Optional, for aesthetic only) */
+        /* Custom Scrollbar */
         .custom-scrollbar::-webkit-scrollbar {
             width: 6px;
         }
 
         .custom-scrollbar::-webkit-scrollbar-thumb {
             background: #d1d5db;
-            /* gray-300 */
             border-radius: 3px;
         }
 
         .custom-scrollbar::-webkit-scrollbar-track {
             background: #f3f4f6;
-            /* gray-100 */
+        }
+
+        /* Mobile Menu Z-Index Fixes */
+        #mobile-menu-2 {
+            position: relative;
+            z-index: 10010;
+        }
+
+        .body-overlay {
+            z-index: 9998;
+            pointer-events: none;
+        }
+
+        .body-overlay.opened {
+            pointer-events: auto;
+        }
+
+        #header-search {
+            pointer-events: none;
+        }
+
+        #header-search.search-opened {
+            pointer-events: auto;
+            z-index: 9999;
+        }
+
+        #mobile-menu-2 a {
+            position: relative;
+            z-index: 10011;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -659,8 +535,6 @@
 
 <body class="text-[14px] font-normal text-[#848b8a] leading-[24px]">
 
-
-    <!-- Preloader (Initial State: Visible, will be hidden by JS) -->
     <div id="loading" class="fixed inset-0 bg-white z-[9999] flex items-center justify-center">
         <div id="loading-center" class="absolute inset-0 flex items-center justify-center">
             <div id="loading-center-absolute" class="relative flex">
@@ -671,65 +545,129 @@
         </div>
     </div>
 
-
-    <!-- HEADER -->
     <header id="header-sticky" class="top-0 z-20">
         <nav class="bg-[#f5f5f5] border-b border-gray-200">
             <div class="max-w-7xl mx-auto px-4">
                 <div class="flex flex-wrap items-center justify-between h-auto">
 
-                    <!-- Logo -->
                     <div class="flex-shrink-0 px-4 py-3 lg:w-3/12">
-                        <a href="index.html">
-                            <img src="assets/img/logo/logo.png" alt="logo">
-                        </a>
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="assets/img/logo/logo.png" alt="logo">
+                            </a>
+                        </div>
                     </div>
 
-                    <!-- Nav Links -->
                     <div class="flex-grow md:flex-grow-0 lg:w-9/12 px-4">
                         <div class="relative flex justify-end lg:justify-between items-center">
 
-                            <!-- Desktop Nav -->
                             <div class="hidden lg:block">
-                                <ul class="main-menu flex space-x-8 xl:space-x-10 list-none p-0 m-0">
-                                    <li><a href="index.html"
-                                            class="block text-[#444] font-medium pt-[27px] pb-[30px] hover:text-[#bc8246]">Home</a>
-                                    </li>
-                                    <li><a href="index.html#shop"
-                                            class="block text-[#444] font-medium pt-[27px] pb-[30px] hover:text-[#bc8246]">Shop</a>
-                                    </li>
-                                    <li><a href="index.html#blog"
-                                            class="block text-[#444] font-medium pt-[27px] pb-[30px] hover:text-[#bc8246]">Blog</a>
-                                    </li>
-                                    <li><a href="index.html#contact"
-                                            class="block text-[#444] font-medium pt-[27px] pb-[30px] hover:text-[#bc8246]">Contact</a>
-                                    </li>
-                                </ul>
+                                <nav>
+                                    <ul id="desktop-menu"
+                                        class="main-menu flex space-x-8 xl:space-x-10 list-none p-0 m-0">
+                                        <li>
+                                            <a href="index.html"
+                                                class="block text-[#323232] font-medium pt-[27px] pb-[30px] capitalize text-[#444] hover:text-[#bc8246] transition-all duration-300">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#shop"
+                                                class="block text-[#444] font-medium pt-[27px] pb-[30px] capitalize hover:text-[#bc8246] transition-all duration-300">Shop</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#reviews"
+                                                class="block text-[#444] font-medium pt-[27px] pb-[30px] capitalize hover:text-[#bc8246] transition-all duration-300">Reviews</a>
+                                        </li>
+                                        <li>
+                                            <a href="contact.html"
+                                                class="block text-[#444] font-medium pt-[27px] pb-[30px] capitalize hover:text-[#bc8246] transition-all duration-300">Contact</a>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
 
-                            <!-- Header Actions -->
                             <div class="header__action ml-4 flex-shrink-0">
                                 <ul class="flex items-center space-x-4 md:space-x-6 list-none p-0 m-0">
 
-                                    <!-- Search Icon -->
-                                    <li>
-                                        <button id="search-toggle"
-                                            class="search-toggle inline-block pt-[27px] pb-[30px] hover:text-bc8246">
-                                            <svg class="h-5 w-5 inline-block text-323232" fill="none"
+                                    <li class="relative">
+                                        <button type="button" id="search-toggle"
+                                            class="search-toggle text-444 inline-block pt-[27px] pb-[30px] relative hover:text-bc8246 transition-colors duration-300">
+                                            <svg class="h-5 w-5 inline-block text-323232 mr-[3px]" fill="none"
                                                 viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                             </svg>
+                                            <span class="hidden sm:inline">Search</span>
                                         </button>
                                     </li>
 
+                                    <li id="cart-dropdown-container" class="relative">
+                                        <a href="javascript:void(0);" id="cart-toggle" class="cart inline-block relative cursor-pointer transition-colors duration-300 
+                                                text-444 hover:text-bc8246 pt-[27px] pb-[30px]">
+
+                                            <!-- SVG Icon (Shopping Bag) -->
+                                            <svg class="h-5 w-5 inline-block text-323232 mr-[3px]" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                            </svg>
+
+                                            <!-- Cart Text (Hidden on default/xs, shown on sm+) -->
+                                            <span class="hidden sm:inline">Cart</span>
+
+                                            <!-- Cart Count Text (Using simple text count (03)) -->
+                                            <span id="cart-count" class="text-sm ml-1">( 0 )</span>
+                                        </a>
+
+                                        <!-- Mini-Cart Dropdown Content -->
+                                        <div id="mini-cart" class="mini-cart-dropdown absolute top-full z-50 p-6 w-[350px] bg-white border border-gray-200 rounded-xl shadow-2xl transition-all duration-300 invisible opacity-0 translate-y-2 
+                                            
+                                            /* Mobile Positioning: Center on small screens (max-sm:), push to right on sm+ */
+                                            max-sm:w-[280px] max-sm:right-1/2 max-sm:transform max-sm:translate-x-1/2
+                                            sm:right-0 sm:translate-x-0
+                                        ">
+                                            <div class="mini-cart-inner">
+
+                                                <!-- List of Items (Scrollable Area) -->
+                                                <ul id="cart"
+                                                    class="mini-cart-list overflow-y-scroll custom-scrollbar cart-list-scroll space-y-7">
+
+
+
+                                                </ul>
+
+                                                <!-- Total Price -->
+                                                <div
+                                                    class="flex justify-between items-center pt-5 mt-5 border-t border-gray-900 mb-6 font-medium text-lg">
+                                                    <span class="text-323232">Subtotal:</span>
+                                                    <span id="subtotal_header"
+                                                        class="text-323232 font-bold">$00.00</span>
+
+                                                </div>
+                                                <!-- Current Balance -->
+                                                <div
+                                                    class="flex justify-between items-center pt-5 mt-5 border-t border-gray-900 mb-6 font-medium text-lg">
+                                                    <span class="text-323232">Total Balance:</span>
+                                                    <span id="balance" class="text-323232 font-bold">$00.00</span>
+
+                                                </div>
+
+                                                <!-- Checkout Links -->
+                                                <div class="checkout-link space-y-3">
+                                                    <a href="cart.html"
+                                                        class="os-btn block w-full text-center py-3 rounded-full text-white bg-8a8f6a font-medium transition hover:bg-opacity-90 shadow-lg">View
+                                                        Cart</a>
+                                                    <a href="checkout.html"
+                                                        class="os-btn os-btn-black block w-full text-center py-3 rounded-full text-white bg-323232 font-medium transition hover:bg-gray-700 shadow-lg">Checkout</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </li>
                                     <!-- ✅ Login/Profile Placeholder -->
                                     <li id="auth-area" class="relative"></li>
-
-                                    <!-- Mobile Menu Button -->
                                     <li class="relative lg:hidden">
                                         <button id="mobile-menu-button-2" type="button"
-                                            class="inline-block pt-[27px] pb-[30px] hover:text-bc8246">
+                                            class="mobile-menu-toggle text-444 inline-block pt-[27px] pb-[30px] hover:text-bc8246 transition-colors duration-300">
                                             <svg class="h-6 w-6 text-323232" fill="none" viewBox="0 0 24 24"
                                                 stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -743,85 +681,24 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Mobile Menu -->
             <div id="mobile-menu-2" class="hidden lg:hidden bg-white border-t border-gray-200">
                 <div class="px-4 py-3 space-y-2">
                     <a href="index.html" class="block text-[#444] hover:text-[#bc8246] text-sm font-medium">Home</a>
                     <a href="index.html#shop"
                         class="block text-[#444] hover:text-[#bc8246] text-sm font-medium">Shop</a>
-                    <a href="index.html#blog"
-                        class="block text-[#444] hover:text-[#bc8246] text-sm font-medium">Blog</a>
-                    <a href="index.html#contact"
+                    <a href="index.html#reviews"
+                        class="block text-[#444] hover:text-[#bc8246] text-sm font-medium">Reviews</a>
+                    <a href="contact.html"
                         class="block text-[#444] hover:text-[#bc8246] text-sm font-medium">Contact</a>
                 </div>
             </div>
         </nav>
     </header>
-    <!-- SLIDER AREA START (Swiper.js Implementation) -->
     <section class="slider__area relative overflow-hidden" id="hero-slider-container">
 
-        <!-- Swiper Container -->
         <div class="swiper hero-slider-active">
             <div class="swiper-wrapper">
 
-                <!-- Slide 1 -->
-                <div class="swiper-slide single-slider" data-background="assets/img/slider/slider-2.jpg">
-                    <div
-                        class="single-slider-inner w-full h-hero-xs sm:h-hero-sm md:h-hero-md lg:h-hero-lg xl:h-hero-xl 2xl:h-hero-2xl flex items-center bg-cover bg-no-repeat bg-left md:bg-center">
-                        <div class="container mx-auto px-4">
-                            <div class="flex flex-wrap">
-                                <div class="w-full sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
-                                    <div class="slider__content">
-                                        <h2
-                                            class="text-5xl md:text-6xl font-semibold leading-tight text-[#323232] mb-4">
-                                            Handmade <br> Hand carved Coffee
-                                        </h2>
-                                        <p class="mb-11 text-lg text-[#323232]">
-                                            As rich and unique as the coffee beans it is intended for, this little
-                                            scoop will make your morning ritual a special occasion every day.
-                                        </p>
-                                        <!-- UPDATED BUTTON CLASSES: relying on custom CSS for size/style, only setting colors with Tailwind -->
-                                        <a href="shop.html" class="os-btn os-btn-2  bg-[#323232] text-white">
-                                            Discover now
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <!-- Slide -->
-                <div class="swiper-slide single-slider" data-background="assets/img/slider/slider-3.jpg">
-                    <div
-                        class="single-slider-inner w-full h-hero-xs sm:h-hero-sm md:h-hero-md lg:h-hero-lg xl:h-hero-xl 2xl:h-hero-2xl flex items-center bg-cover bg-no-repeat bg-left md:bg-center">
-                        <div class="container mx-auto px-4">
-                            <div class="flex flex-wrap">
-                                <div class="w-full sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-5/12 px-4">
-                                    <div class="slider__content">
-                                        <h2
-                                            class="text-5xl md:text-6xl font-semibold leading-tight text-[#323232] mb-4">
-                                            High Beam<br> by Tom Chung
-                                        </h2>
-                                        <p class="mb-11 text-lg text-[#323232]">
-                                            High Beam is an adjustable desk or shelf light that offers a wide
-                                            variety of lighting possibilities.
-                                        </p>
-                                        <a href="shop.html" class="os-btn os-btn-2 bg-[#323232] text-white">
-                                            Discover now
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Slide 3 -->
-                <!-- Slide -->
                 <div class="swiper-slide single-slider" data-background="assets/img/slider/slider-1.jpg">
                     <div
                         class="single-slider-inner w-full h-hero-xs sm:h-hero-sm md:h-hero-md lg:h-hero-lg xl:h-hero-xl 2xl:h-hero-2xl flex items-center bg-cover bg-no-repeat bg-left md:bg-center">
@@ -831,14 +708,61 @@
                                     <div class="slider__content">
                                         <h2
                                             class="text-5xl md:text-6xl font-semibold leading-tight text-[#323232] mb-4">
-                                            Handmade <br> Hand carved Coffee
+                                            Bring Warmth <br> to Every Corner
                                         </h2>
                                         <p class="mb-11 text-lg text-[#323232]">
-                                            As rich and unique as the coffee beans it is intended for, this little
-                                            scoop will make your morning ritual a special occasion every day.
+                                            Discover handcrafted home decor inspired by natural textures and clean
+                                            design.
                                         </p>
-                                        <a href="shop.html" class="os-btn os-btn-2 bg-[#323232] text-white">
-                                            Discover now
+                                        <a href="#shop" class="os-btn os-btn-2 bg-[#323232] text-white">
+                                            Shop Home Decor
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide single-slider" data-background="assets/img/slider/slider-2.jpg">
+                    <div
+                        class="single-slider-inner w-full h-hero-xs sm:h-hero-sm md:h-hero-md lg:h-hero-lg xl:h-hero-xl 2xl:h-hero-2xl flex items-center bg-cover bg-no-repeat bg-left md:bg-center">
+                        <div class="container mx-auto px-4">
+                            <div class="flex flex-wrap">
+                                <div class="w-full sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
+                                    <div class="slider__content">
+                                        <h2
+                                            class="text-5xl md:text-6xl font-semibold leading-tight text-[#323232] mb-4">
+                                            Light Up <br> Your Workspace
+                                        </h2>
+                                        <p class="mb-11 text-lg text-[#323232]">
+                                            Stylish, energy-efficient lamps to brighten your day — and your desk.
+                                        </p>
+                                        <a href="#shop" class="os-btn os-btn-2 bg-[#323232] text-white">
+                                            Shop now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide single-slider" data-background="assets/img/slider/slider-3.jpg">
+                    <div
+                        class="single-slider-inner w-full h-hero-xs sm:h-hero-sm md:h-hero-md lg:h-hero-lg xl:h-hero-xl 2xl:h-hero-2xl flex items-center bg-cover bg-no-repeat bg-left md:bg-center">
+                        <div class="container mx-auto px-4">
+                            <div class="flex flex-wrap">
+                                <div class="w-full sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-5/12 px-4">
+                                    <div class="slider__content">
+                                        <h2
+                                            class="text-5xl md:text-6xl font-semibold leading-tight text-[#323232] mb-4">
+                                            Smart Design, <br> Smarter Living
+                                        </h2>
+                                        <p class="mb-11 text-lg text-[#323232]">
+                                            Explore innovative gadgets that make your home more connected and efficient.
+                                        </p>
+                                        <a href="#shop" class="os-btn os-btn-2 bg-[#323232] text-white">
+                                            Shop Smart Devices
                                         </a>
                                     </div>
                                 </div>
@@ -849,78 +773,66 @@
 
             </div>
 
-            <!-- Swiper Pagination (Dots) -->
             <div class="swiper-pagination hero-slider-pagination"></div>
 
         </div>
 
     </section>
-    <!-- SLIDER AREA END -->
-
-    <!-- banner area start -->
     <div class="banner__area">
         <div class="container mx-auto px-4">
-            <!-- p-relative mt--95 converted to relative mt-[-95px] z-10. Added padding/bg to simulate the original white border/frame. -->
-            <div class="relative mt-[-95px] z-10 bg-white p-5 md:p-7">
+            <div class="relative z-10 bg-white p-5 md:p-7 mt-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                    <!-- Banner Item 1 -->
                     <div class="banner__item mb-8 relative overflow-hidden group">
                         <div class="banner__thumb fix overflow-hidden rounded-lg">
-                            <a href="product-details.html" class="block w-full">
+                            <a href="#shop" class="block w-full">
                                 <img src="assets/img/shop/banner/banner-sm-1.jpg" alt="banner"
                                     class="w-full object-cover">
                             </a>
                         </div>
-                        <!-- Banner Content Overlay - position and transition handled by custom CSS (.banner__content) -->
                         <div class="banner__content absolute left-[10%] transition-all duration-300">
                             <h5 class="text-xl font-semibold leading-snug mb-4">
-                                <a href="product-details.html"
-                                    class="text-gray-900 hover:text-bc8246 transition-colors">Sunflower Clock <br>
-                                    Quartz Hands</a>
+                                <a href="#shop" class="text-gray-900 hover:text-bc8246 transition-colors">Bring Timeless
+                                    <br> Style Home</a>
                             </h5>
-                            <a href="product-details.html"
-                                class="link-btn text-sm font-medium text-bc8246 hover:text-gray-700 transition-colors">Discover
+                            <a href="#shop"
+                                class="link-btn text-sm font-medium text-bc8246 hover:text-gray-700 transition-colors">Shop
                                 now</a>
                         </div>
                     </div>
 
-                    <!-- Banner Item 2 -->
                     <div class="banner__item mb-8 relative overflow-hidden group">
                         <div class="banner__thumb fix overflow-hidden rounded-lg">
-                            <a href="product-details.html" class="block w-full">
+                            <a href="#shop" class="block w-full">
                                 <img src="assets/img/shop/banner/banner-sm-2.jpg" alt="banner"
                                     class="w-full object-cover">
                             </a>
                         </div>
                         <div class="banner__content absolute left-[10%] transition-all duration-300">
                             <h5 class="text-xl font-semibold leading-snug mb-4">
-                                <a href="product-details.html"
-                                    class="text-gray-900 hover:text-bc8246 transition-colors">Chair Kimi No Isu <br>
-                                    Project</a>
+                                <a href="#shop" class="text-gray-900 hover:text-bc8246 transition-colors">Crafted
+                                    Comfort <br> for Living</a>
                             </h5>
-                            <a href="product-details.html"
-                                class="link-btn text-sm font-medium text-bc8246 hover:text-gray-700 transition-colors">Discover
+                            <a href="#shop"
+                                class="link-btn text-sm font-medium text-bc8246 hover:text-gray-700 transition-colors">Shop
                                 now</a>
                         </div>
                     </div>
 
-                    <!-- Banner Item 3 -->
                     <div class="banner__item mb-8 relative overflow-hidden group">
                         <div class="banner__thumb fix overflow-hidden rounded-lg">
-                            <a href="product-details.html" class="block w-full">
+                            <a href="#shop" class="block w-full">
                                 <img src="assets/img/shop/banner/banner-sm-3.jpg" alt="banner"
                                     class="w-full object-cover">
                             </a>
                         </div>
                         <div class="banner__content absolute left-[10%] transition-all duration-300">
                             <h5 class="text-xl font-semibold leading-snug mb-4">
-                                <a href="product-details.html"
-                                    class="text-gray-900 hover:text-bc8246 transition-colors">Sweeper and Dustpan
-                                    <br> by Jan Kochanski </a>
+                                <a href="#shop" class="text-gray-900 hover:text-bc8246 transition-colors">Beautiful
+                                    Tools <br> for Everyday</a>
                             </h5>
-                            <a href="product-details.html"
-                                class="link-btn text-sm font-medium text-bc8246 hover:text-gray-700 transition-colors">Discover
+                            <a href="#shop"
+                                class="link-btn text-sm font-medium text-bc8246 hover:text-gray-700 transition-colors">Shop
                                 now</a>
                         </div>
                     </div>
@@ -928,20 +840,8 @@
             </div>
         </div>
     </div>
-    <!-- banner area end -->
     <main>
 
-
-
-        <!-- M -->
-        <!-- E -->
-        <!-- H -->
-        <!-- E -->
-        <!-- R -->
-        <!-- A -->
-        <!-- J -->
-        <!-- <main> -->
-        <!-- Trending Product -->
 
         <section id="shop" class="product__area pt-16 pb-24">
 
@@ -954,18 +854,14 @@
                                 <h2 class="title text-3xl font-bold text-gray-800">Trending Products</h2>
                             </div>
                             <div class="section__sub-title">
-                                <p class="desc text-gray-600">Mirum est notare quam littera gothica quam nunc putamus
-                                    parum
-                                    claram!
+                                <p class="desc text-gray-600">Discover what everyone’s loving right now.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Filter & Search Section -->
                 <div
                     class="w-full bg-white px-4 md:px-8 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-gray-200">
-                    <!-- Search Box -->
                     <div class="relative w-full md:w-1/3">
                         <input type="text" id="searchInput" placeholder="Search products..."
                             class="w-full border border-gray-300 rounded-xl py-2 pl-10 pr-4 text-gray-700 focus:ring-2 focus:ring-gray-400 focus:outline-none" />
@@ -976,7 +872,6 @@
                         </svg>
                     </div>
 
-                    <!-- Sort Dropdown -->
                     <div class="flex flex-wrap items-center gap-3">
                         <label for="sortSelect" class="text-sm font-medium text-gray-600">Sort by:</label>
                         <select id="sortSelect"
@@ -1015,10 +910,6 @@
                 </div>
             </div>
         </section>
-        <!-- Trending product end -->
-
-
-        <!-- Sale off area start -->
         <section class="sale__area py-24">
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap">
@@ -1028,8 +919,7 @@
                                 <h2 class="title">Sale Off</h2>
                             </div>
                             <div class="section__sub-title">
-                                <p class="desc">Mirum est notare quam littera gothica quam nunc putamus parum claram!
-                                </p>
+                                <p class="desc">Unbeatable prices — limited time only.</p>
                             </div>
                         </div>
                     </div>
@@ -1046,53 +936,97 @@
             </div>
         </section>
 
-        <!-- Sale off are end -->
-
-
-        <!-- Client  -->
-
-        <section class="client__area  py-36 align-middle w-full">
-            <div class="container mx-auto px-4 w-full">
-
-                <!-- Client Swiper -->
-                <div class="swiper client-swiper">
-                    <div class="swiper-wrapper">
-                        <!-- Swiper slides are correctly using swiper-slide class -->
-                        <div class="swiper-slide client__thumb w-auto flex justify-center">
-                            <a href="#"><img src="assets/img/client/brand-1.webp" alt="client"
-                                    class="max-h-16 w-auto object-contain grayscale opacity-60 hover:opacity-100 transition-all duration-300"></a>
-                        </div>
-                        <div class="swiper-slide client__thumb w-auto flex justify-center">
-                            <a href="#"><img src="assets/img/client/brand-2.webp" alt="client"
-                                    class="max-h-16 w-auto object-contain grayscale opacity-60 hover:opacity-100 transition-all duration-300"></a>
-                        </div>
-                        <div class="swiper-slide client__thumb w-auto flex justify-center">
-                            <a href="#"><img src="assets/img/client/brand-3.webp" alt="client"
-                                    class="max-h-16 w-auto object-contain grayscale opacity-60 hover:opacity-100 transition-all duration-300"></a>
-                        </div>
-                        <div class="swiper-slide client__thumb w-auto flex justify-center">
-                            <a href="#"><img src="assets/img/client/brand-4.webp" alt="client"
-                                    class="max-h-16 w-auto object-contain grayscale opacity-60 hover:opacity-100 transition-all duration-300"></a>
-                        </div>
-                        <div class="swiper-slide client__thumb w-auto flex justify-center">
-                            <a href="#"><img src="assets/img/client/brand-5.webp" alt="client"
-                                    class="max-h-16 w-auto object-contain grayscale opacity-60 hover:opacity-100 transition-all duration-300"></a>
-                        </div>
-                        <div class="swiper-slide client__thumb w-auto flex justify-center">
-                            <a href="#"><img src="assets/img/client/brand-3.webp" alt="client"
-                                    class="max-h-16 w-auto object-contain grayscale opacity-60 hover:opacity-100 transition-all duration-300"></a>
+        <section class="review__area py-12 md:py-16 lg:py-20 select-none bg-gray-50" id="reviews">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-wrap">
+                    <div class="w-full">
+                        <div class="section__title-wrapper text-center mb-14 flex flex-col gap-4">
+                            <div class="section__title mb-2.5">
+                                <h2 class="title">What Our Customers Say</h2>
+                            </div>
+                            <div class="section__sub-title">
+                                <p class="desc">Hear what our amazing customers have to say about their experience.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <div class="swiper review-swiper w-full overflow-hidden">
+                    <div id="reviewItems" class="swiper-wrapper">
+
+                        <div class="swiper-slide h-auto">
+                            <div class="review-card h-full bg-white p-8 rounded-xl border border-gray-200">
+                                <div class="flex mb-4">
+                                    <span class="star text-xl">&#9733;</span>
+                                    <span class="star text-xl">&#9733;</span>
+                                    <span class="star text-xl">&#9733;</span>
+                                    <span class="star text-xl">&#9733;</span>
+                                    <span class="star text-xl">&#9733;</span>
+                                </div>
+                                <p class="text-gray-700 italic mb-4">"Absolutely stunning quality! The delivery was
+                                    fast, and the packaging was excellent. Highly recommend for unique, well-crafted
+                                    pieces."</p>
+                                <div class="font-bold text-gray-900">- Sarah J.</div>
+                                <div class="text-sm text-gray-500">Los Angeles, CA</div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide h-auto">
+                            <div class="review-card h-full bg-white p-8 rounded-xl border border-gray-200">
+                                <div class="flex mb-4">
+                                    <span class="star text-xl">&#9733;</span>
+                                    <span class="star text-xl">&#9733;</span>
+                                    <span class="star text-xl">&#9733;</span>
+                                    <span class="star text-xl">&#9733;</span>
+                                    <span class="star text-xl">&#9733;</span>
+                                </div>
+                                <p class="text-gray-700 italic mb-4">"The customer service was exceptional when I had a
+                                    question about assembly. The Chair Kimi No Isu is even better in person."</p>
+                                <div class="font-bold text-gray-900">- Mark D.</div>
+                                <div class="text-sm text-gray-500">New York, NY</div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide h-auto">
+                            <div class="review-card h-full bg-white p-8 rounded-xl border border-gray-200">
+                                <div class="flex mb-4">
+                                    <span class="star text-xl">&#9733;</span>
+                                    <span class="star text-xl">&#9733;</span>
+                                    <span class="star text-xl">&#9733;</span>
+                                    <span class="star text-xl">&#9733;</span>
+                                    <span class="star text-xl">&#9733;</span>
+                                </div>
+                                <p class="text-gray-700 italic mb-4">"I've been looking for unique home decor and this
+                                    shop delivered. The Sunflower Clock is a fantastic addition to my living room. Five
+                                    stars!"</p>
+                                <div class="font-bold text-gray-900">- Jennifer L.</div>
+                                <div class="text-sm text-gray-500">Chicago, IL</div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide h-auto">
+                            <div class="review-card h-full bg-white p-8 rounded-xl border border-gray-200">
+                                <div class="flex mb-4">
+                                    <span class="star text-xl">&#9733;</span>
+                                    <span class="star text-xl">&#9733;</span>
+                                    <span class="star text-xl">&#9733;</span>
+                                    <span class="star text-xl">&#9733;</span>
+                                    <span class="star text-xl">&#9734;</span>
+                                </div>
+                                <p class="text-gray-700 italic mb-4">"Great selection and fast shipping, though one item
+                                    arrived slightly later than expected. Overall, a very positive experience!"</p>
+                                <div class="font-bold text-gray-900">- Alex T.</div>
+                                <div class="text-sm text-gray-500">Seattle, WA</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="review-pagination swiper-pagination mt-8 relative !bottom-0"></div>
             </div>
         </section>
 
-        <!-- client end -->
-        <!-- Blog post -->
-
-        <!-- FIX: Replaced fixed p-20 with responsive vertical padding: py-12 (mobile) to py-20 (desktop) -->
-        <section id="blog" class="blog__area py-12 md:py-16 lg:py-20 select-none">
+        <section class="blog__area py-12 md:py-16 lg:py-20 select-none" id="blog">
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap">
                     <div class="w-full">
@@ -1101,8 +1035,7 @@
                                 <h2 class="title">Our Blog Posts</h2>
                             </div>
                             <div class="section__sub-title">
-                                <p class="desc">Mirum est notare quam littera gothica quam nunc putamus parum claram!
-                                </p>
+                                <p class="desc">Insights, updates, and stories from our experts.</p>
                             </div>
                         </div>
                     </div>
@@ -1119,11 +1052,8 @@
 
                 </div>
             </div>
-        </section> <!-- Blog post end -->
+        </section>
 
-        <!-- Subscribe -->
-
-        <!-- FIX: Replaced px-[20%] with standard padding logic and added responsive top padding -->
         <section class="subscribe__area pb-24 pt-12 md:pt-16 lg:pt-24 w-full flex justify-center items-center">
             <div class="container mx-auto px-4">
                 <div class="subscribe__inner">
@@ -1132,17 +1062,16 @@
                             <div class="subscribe__content text-center flex flex-col
                             gap-8">
                                 <h2 class="title">Get Discount Info</h2>
-                                <p class="desc">Subscribe to the Outstock mailing list to receive updates
+                                <p class="desc">Subscribe to the Shopsyfy mailing list to receive updates
                                     on new
                                     arrivals, special
                                     offers and other discount information.</p>
                                 <div class="subscribe__form mt-5">
                                     <form action="#" class="flex flex-col !justify-center !align-middle gap-10">
-                                        <input
-                                            class="   w-full p-2 border-b border-b-neutral-400 text-center outline-none"
+                                        <input class="w-full p-2 border-b border-b-neutral-400 text-center outline-none"
                                             type="email" placeholder="Subscribe to our newsletter...">
                                         <button
-                                            class="os-btn os-btn-2  os-btn-3  !w-[200px] mx-auto bg-[#323232] text-white">subscribe</button>
+                                            class="os-btn os-btn-2 os-btn-3 !w-[200px] mx-auto bg-[#323232] text-white">subscribe</button>
                                     </form>
                                 </div>
                             </div>
@@ -1151,15 +1080,10 @@
                 </div>
             </div>
         </section>
-        <!-- Subscribe section end -->
 
-        <!-- ship modal start -->
-
-        <!-- ship modal end -->
     </main>
 
 
-    <!-- Footer Section -->
     <section class="bg-gray-900 text-[#ffffffb6] font-extralight">
         <div class="container mx-auto px-4 py-12 md:pt-16 lg:pt-24 lg:pb-16">
             <div class="grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-8">
@@ -1182,7 +1106,7 @@
                                         <i class="fal fa-map-marker-alt w-5 text-center"></i>
                                     </div>
                                     <div>
-                                        <span>Add: 1234 Heaven Stress, Beverly Hill, Melbourne, USA.</span>
+                                        <span>Add: 4321 Bali Arcade, Chokbazar, Chittagong, Bangladesh.</span>
                                     </div>
                                 </li>
                                 <li class="flex items-start">
@@ -1272,8 +1196,6 @@
         </div>
     </section>
 
-    <!-- FLOATING UTILITY COMPONENTS (Search, Overlay, Scroll Top) -->
-    <!-- Search Overlay -->
     <section id="header-search" class="header__search bg-white flex items-center">
         <div class="max-w-7xl mx-auto px-4 w-full">
             <div class="flex flex-wrap justify-center">
@@ -1281,7 +1203,6 @@
                     <div class="text-center">
                         <form action="#">
                             <div class="mb-[35px] sm:mb-5">
-                                <!-- Close Button logic is handled by jQuery using id="header__search-btn-close" -->
                                 <button type="button" id="header__search-btn-close"
                                     class="text-lg text-[#bc8246] hover:text-gray-700">
                                     <svg class="w-6 h-6 inline-block" fill="none" viewBox="0 0 24 24"
@@ -1307,7 +1228,6 @@
                                     class="h-[50px] w-full border-none px-[15px] pr-[30px] border-b-2 border-[#ebebeb] focus:border-b-[#bc8246] placeholder:text-[#444] outline-none transition-colors duration-300">
                                 <button type="submit"
                                     class="absolute top-0 right-0 h-[50px] w-[50px] text-center text-lg bg-transparent text-[#323232] hover:text-[#bc8246] transition-colors duration-300">
-                                    <!-- SEARCH BUTTON ICON (Fixed to SVG) -->
                                     <svg class="w-5 h-5 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -1322,42 +1242,35 @@
     </section>
 
 
-    <!-- Body Overlay (for mobile menu and search) -->
-    <!-- Added 'hidden' utility since jQuery's toggleOverlay logic assumes it starts invisible -->
-    <div class="body-overlay hidden fixed inset-0 bg-black/50 h-full w-full z-[9998]"></div>
+    <div class="body-overlay hidden "></div>
 
-    <!-- Scroll Top Button -->
     <div class="scroll-up fixed right-[30px] bottom-[30px] w-10 h-10 leading-10 text-center text-white bg-[#bc8246] rounded-full shadow-lg hover:bg-[#323232] transition-colors duration-300 cursor-pointer z-[999]"
         id="scroll" style="display: none;">
         <a href="javascript:void(0);" class="block text-white"><i class="fas fa-level-up-alt"></i></a>
     </div>
 
 
-    <!-- My JS -->
-    <script src="./js/profile.js"></script>
-    <script src="./js/main.js"></script>
-    <script src="./js/cartHandler.js"></script>
-    <!-- Cart Interactivity Logic (Moved from app_logic.js) -->
+    <script src="assets/js/wishlist.js"></script>
+    <script src="assets/js/profile.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cartHandler.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // --- Cart & Header Functionality Setup ---
-
-        // Get elements for the Cart functionality
         const cartToggle = document.getElementById('cart-toggle');
         const miniCart = document.getElementById('mini-cart');
         const cartContainer = document.getElementById('cart-dropdown-container');
 
-        // Get elements for the new buttons (for stopPropagation/preventDefault)
         const searchToggle = document.getElementById('search-toggle');
         const mobileMenuButton = document.getElementById('mobile-menu-button-2');
 
-        // Function to toggle the cart visibility
         function toggleCart() {
             if (miniCart) {
                 miniCart.classList.toggle('is-open');
             }
         }
 
-        // --- Event Listeners ---
         if (cartToggle) {
             cartToggle.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -1380,7 +1293,6 @@
             });
         }
 
-        // Close the cart if the user clicks anywhere outside the cart area
         document.addEventListener('click', (e) => {
             if (cartContainer && miniCart && !cartContainer.contains(e.target) && miniCart.classList.contains(
                     'is-open')) {
@@ -1388,23 +1300,108 @@
             }
         });
 
-        // Ensure the cart content itself does not immediately close the cart when clicked
         if (miniCart) {
             miniCart.addEventListener('click', (e) => {
                 e.stopPropagation();
             });
         }
     </script>
-    <!-- Footer Ends Here -->
-    <!-- Script Loading Order Fix: Load jQuery first, then MetisMenu (INLINED), then your custom script -->
 
-    <!-- START: Injected Scripts -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js">
+
+
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const authArea = document.getElementById("auth-area");
+
+            function getUser() {
+                return JSON.parse(localStorage.getItem("userProfile")) || {};
+            }
+
+            function renderAuthArea() {
+                const user = getUser();
+                authArea.innerHTML = "";
+
+                if (!user.email || !user.password) {
+                    authArea.innerHTML = `
+            <a href="login.html" class="os-btn border border-[#bc8246] text-[#bc8246] px-4 py-2 rounded hover:text-white hover:bg-[#bc8246] transition-all duration-300">
+                Login
+            </a>
+            `;
+                    return;
+                }
+
+                const displayName = user.fname ? `${user.fname}` : "Account";
+                const avatarSrc = user.avatar || "./assets/img/default-avatar.png";
+
+                authArea.innerHTML = `
+            <div class="relative group">
+                <button class="flex items-center space-x-2 pt-[27px] pb-[30px] hover:text-[#bc8246]">
+                    <svg class="w-6 h-6 text-[#323232]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M5.121 17.804A9 9 0 1118.88 6.196 9 9 0 015.12 17.804z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </button>
+                <ul class="absolute right-0 mt-1 hidden group-hover:block bg-white border border-gray-200 shadow-lg rounded-md w-32 text-left z-[10020]">
+                    <li><a href="profile.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a></li>
+                    <li><button id="logout-btn" class="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</button></li>
+                </ul>
+            </div>
+            `;
+
+                const logoutBtn = document.getElementById("logout-btn");
+                if (logoutBtn) {
+                    logoutBtn.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        logout();
+                    });
+                }
+            }
+
+            function logout() {
+                localStorage.setItem("userProfile", JSON.stringify({}));
+                window.location.href = "./login.html";
+            }
+
+            renderAuthArea();
+        });
+    </script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const reviewSwiper = new Swiper('.review-swiper', {
+                loop: true,
+                speed: 1000,
+                autoplay: {
+                    delay: 8000,
+                    disableOnInteraction: false,
+                },
+                slidesPerView: 1,
+                spaceBetween: 20,
+                pagination: {
+                    el: '.review-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                },
+            });
+        });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
-    <!-- New Swiper Initialization for the Hero Slider -->
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const heroSwiper = new Swiper('.hero-slider-active', {
@@ -1418,14 +1415,11 @@
                     el: '.hero-slider-pagination',
                     clickable: true,
                 },
-                // Navigation arrows removed as requested
-
-                // Hide dots and arrows on small screens (as suggested by original JS)
                 breakpoints: {
                     0: {
                         pagination: false,
                     },
-                    768: { // Start showing dots on tablet size and up
+                    768: {
                         pagination: {
                             el: '.hero-slider-pagination',
                             clickable: true,
@@ -1437,67 +1431,50 @@
     </script>
 
     <script>
-        // Initialize Swiper for Client Logos
         const swiper = new Swiper('.client-swiper', {
 
-            // THIS IS THE INFINITE LOOP
             loop: true,
 
-            // THE FIX: Change this from 'auto' to 3
             slidesPerView: 5,
 
-            // Optional: Add responsive settings
             breakpoints: {
-                // when window width is >= 320px
                 320: {
                     slidesPerView: 3,
                     spaceBetween: 20
                 },
-                // when window width is >= 768px
                 768: {
                     slidesPerView: 4,
                     spaceBetween: 30
                 },
-                // when window width is >= 1024px
                 1024: {
                     slidesPerView: 5,
-                    spaceBetween: 48 // This is your 'gap-x-12'
+                    spaceBetween: 48
                 }
             },
 
-            // Space between slides
-            spaceBetween: 5, // This is your 'gap-x-12'
+            spaceBetween: 5,
 
-            // This enables the "grab" cursor
             grabCursor: true,
         });
     </script>
     <script>
-        // Initialize the Blog Swiper
         const blogSwiper = new Swiper('.blog-swiper', {
 
-            // --- This creates the infinite loop ---
             loop: true,
 
-            // Show 3 slides on desktop
             slidesPerView: 4,
 
-            // Space between slides (same as your 'gap-5')
             spaceBetween: 0,
 
-            // Responsive breakpoints
             breakpoints: {
-                // Mobile (1 slide)
                 320: {
                     slidesPerView: 1,
                     spaceBetween: 20
                 },
-                // Tablet (2 slides)
-                768: { // Changed from 840 to 768 (Tailwind 'md')
+                768: {
                     slidesPerView: 2,
                     spaceBetween: 20
                 },
-                // Desktop (3 slides)
                 1250: {
                     slidesPerView: 3,
                     spaceBetween: 20
@@ -1509,19 +1486,14 @@
             },
 
 
-
-            // Draggable cursor
             grabCursor: true,
         });
     </script>
 
 
-    <!-- Drag to scroll JS -->
     <script>
-        // Find ALL elements that have the class "drag-scroll"
         const sliders = document.querySelectorAll('.drag-scroll');
 
-        // Attach the drag-to-scroll behavior to EACH slider
         sliders.forEach(slider => {
             let isDown = false;
             let startX;
@@ -1531,7 +1503,6 @@
                 isDown = true;
                 slider.classList.add('active:cursor-grabbing');
 
-                // Prevents text selection and image dragging
                 e.preventDefault();
 
                 startX = e.pageX - slider.offsetLeft;
@@ -1551,23 +1522,20 @@
             slider.addEventListener('mousemove', (e) => {
                 if (!isDown) return;
 
-                // Prevents text selection while dragging
                 e.preventDefault();
 
                 const x = e.pageX - slider.offsetLeft;
-                const walk = (x - startX) * 2; // The '* 2' makes it scroll faster
+                const walk = (x - startX) * 2;
                 slider.scrollLeft = scrollLeft - walk;
             });
 
-            // Add touch support for dragging on mobile devices
             slider.addEventListener('touchstart', (e) => {
                 isDown = true;
-                // e.preventDefault(); // Commented out to allow vertical scrolling
                 startX = e.touches[0].pageX - slider.offsetLeft;
                 scrollLeft = slider.scrollLeft;
             }, {
                 passive: true
-            }); // Use passive listener for better scroll performance
+            });
 
             slider.addEventListener('touchend', () => {
                 isDown = false;
@@ -1578,7 +1546,6 @@
 
                 const x = e.touches[0].pageX - slider.offsetLeft;
                 const walk = (x - startX) * 2;
-                // Horizontal scrolling
                 slider.scrollLeft = scrollLeft - walk;
             }, {
                 passive: true
@@ -1586,206 +1553,76 @@
         });
     </script>
 
-    <!-- INLINED metisMenu.min.js (v3.0.6) to prevent script loading errors -->
-    <script>
-        /*!
-         * metismenu https://github.com/onokumus/metismenu#readme
-         * A jQuery menu plugin
-         * @version 3.0.6
-         * @author Osman Nuri Okumus <onokumus@gmail.com> (https://github.com/onokumus)
-         * @license: MIT 
-         */
-        ! function (e, n) {
-            "object" == typeof exports && "undefined" != typeof module ? module.exports = n(require("jquery")) :
-                "function" == typeof define && define.amd ? define(["jquery"], n) : (e = e || self).metisMenu = n(e
-                    .jQuery)
-        }(this, function (o) {
-            "use strict";
-
-            function a() {
-                return (a = Object.assign || function (e) {
-                    for (var n = 1; n < arguments.length; n++) {
-                        var t = arguments[n];
-                        for (var i in t) Object.prototype.hasOwnProperty.call(t, i) && (e[i] = t[i])
-                    }
-                    return e
-                }).apply(this, arguments)
-            }
-            o = o && Object.prototype.hasOwnProperty.call(o, "default") ? o.default : o;
-            var i, n, r, s = (n = "transitionend", r = {
-                TRANSITION_END: "mmTransitionEnd",
-                triggerTransitionEnd: function (e) {
-                    i(e).trigger(n)
-                },
-                supportsTransitionEnd: function () {
-                    return Boolean(n)
-                }
-            }, (i = o).fn.mmEmulateTransitionEnd = e, i.event.special[r.TRANSITION_END] = {
-                bindType: n,
-                delegateType: n,
-                handle: function (e) {
-                    if (i(e.target).is(this)) return e.handleObj.handler.apply(this, arguments)
-                }
-            }, r);
-
-            function e(e) {
-                var n = this,
-                    t = !1;
-                return i(this).one(r.TRANSITION_END, function () {
-                    t = !0
-                }), setTimeout(function () {
-                    t || r.triggerTransitionEnd(n)
-                }, e), this
-            }
-            var t = "metisMenu",
-                g = "metisMenu",
-                l = "." + g,
-                h = o.fn[t],
-                f = {
-                    toggle: !0,
-                    preventDefault: !0,
-                    triggerElement: "a",
-                    parentTrigger: "li",
-                    subMenu: "ul"
-                },
-                d = {
-                    SHOW: "show" + l,
-                    SHOWN: "shown" + l,
-                    HIDE: "hide" + l,
-                    HIDDEN: "hidden" + l,
-                    CLICK_DATA_API: "click" + l + ".data-api"
-                },
-                u = "metismenu",
-                c = "mm-active",
-                p = "mm-show",
-                m = "mm-collapse",
-                T = "mm-collapsing",
-                v = function () {
-                    function r(e, n) {
-                        this.element = e, this.config = a({}, f, {}, n), this.transitioning = null, this.init()
-                    }
-                    var e = r.prototype;
-                    return e.init = function () {
-                        var a = this,
-                            s = this.config,
-                            e = o(this.element);
-                        e.addClass(u), e.find(s.parentTrigger + "." + c).children(s.triggerElement).attr(
-                                "aria-expanded", "true"), e.find(s.parentTrigger + "." + c).parents(s
-                                .parentTrigger).addClass(c), e.find(s.parentTrigger + "." + c).parents(s
-                                .parentTrigger).children(s.triggerElement).attr("aria-expanded", "true"), e
-                            .find(s.parentTrigger + "." + c).has(s.subMenu).children(s.subMenu).addClass(m +
-                                " " + p), e.find(s.parentTrigger).not("." + c).has(s.subMenu).children(s
-                                .subMenu).addClass(m), e.find(s.parentTrigger).children(s.triggerElement).on(d
-                                .CLICK_DATA_API,
-                                function (e) {
-                                    var n = o(this);
-                                    if ("true" !== n.attr("aria-disabled")) {
-                                        s.preventDefault && "#" === n.attr("href") && e.preventDefault();
-                                        var t = n.parent(s.parentTrigger),
-                                            i = t.siblings(s.parentTrigger),
-                                            r = i.children(s.triggerElement);
-                                        t.hasClass(c) ? (n.attr("aria-expanded", "false"), a.removeActive(t)) :
-                                            (n.attr("aria-expanded", "true"), a.setActive(t), s.toggle && (a
-                                                .removeActive(i), r.attr("aria-expanded", "false"))), s
-                                            .onTransitionStart && s.onTransitionStart(e)
-                                    }
-                                })
-                    }, e.setActive = function (e) {
-                        o(e).addClass(c);
-                        var n = o(e).children(this.config.subMenu);
-                        0 < n.length && !n.hasClass(p) && this.show(n)
-                    }, e.removeActive = function (e) {
-                        o(e).removeClass(c);
-                        var n = o(e).children(this.config.subMenu + "." + p);
-                        0 < n.length && this.hide(n)
-                    }, e.show = function (e) {
-                        var n = this;
-                        if (!this.transitioning && !o(e).hasClass(T)) {
-                            var t = o(e),
-                                i = o.Event(d.SHOW);
-                            if (t.trigger(i), !i.isDefaultPrevented()) {
-                                if (t.parent(this.config.parentTrigger).addClass(c), this.config.toggle) {
-                                    var r = t.parent(this.config.parentTrigger).siblings().children(this.config
-                                        .subMenu + "." + p);
-                                    this.hide(r)
-                                }
-                                t.removeClass(m).addClass(T).height(0), this.setTransitioning(!0);
-                                t.height(e[0].scrollHeight).one(s.TRANSITION_END, function () {
-                                    n.config && n.element && (t.removeClass(T).addClass(m + " " + p)
-                                        .height(""), n.setTransitioning(!1), t.trigger(d.SHOWN))
-                                }).mmEmulateTransitionEnd(350)
-                            }
-                        }
-                    }, e.hide = function (e) {
-                        var n = this;
-                        if (!this.transitioning && o(e).hasClass(p)) {
-                            var t = o(e),
-                                i = o.Event(d.HIDE);
-                            if (t.trigger(i), !i.isDefaultPrevented()) {
-                                t.parent(this.config.parentTrigger).removeClass(c), t.height(t.height())[0]
-                                    .offsetHeight, t.addClass(T).removeClass(m).removeClass(p), this
-                                    .setTransitioning(!0);
-                                var r = function () {
-                                    n.config && n.element && (n.transitioning && n.config.onTransitionEnd &&
-                                        n.config.onTransitionEnd(), n.setTransitioning(!1), t.trigger(d
-                                            .HIDDEN), t.removeClass(T).addClass(m))
-                                };
-                                0 === t.height() || "none" === t.css("display") ? r() : t.height(0).one(s
-                                    .TRANSITION_END, r).mmEmulateTransitionEnd(350)
-                            }
-                        }
-                    }, e.setTransitioning = function (e) {
-                        this.transitioning = e
-                    }, e.dispose = function () {
-                        o.removeData(this.element, g), o(this.element).find(this.config.parentTrigger).children(
-                                this.config.triggerElement).off(d.CLICK_DATA_API), this.transitioning = null,
-                            this.config = null, this.element = null
-                    }, r.jQueryInterface = function (i) {
-                        return this.each(function () {
-                            var e = o(this),
-                                n = e.data(g),
-                                t = a({}, f, {}, e.data(), {}, "object" == typeof i && i ? i : {});
-                            if (n || (n = new r(this, t), e.data(g, n)), "string" == typeof i) {
-                                if (void 0 === n[i]) throw new Error('No method named "' + i + '"');
-                                n[i]()
-                            }
-                        })
-                    }, r
-                }();
-            return o.fn[t] = v.jQueryInterface, o.fn[t].Constructor = v, o.fn[t].noConflict = function () {
-                return o.fn[t] = h, v.jQueryInterface
-            }, v
-        });
-    </script>
 
     <script>
-        // NOTE: Custom JS logic starts here. Requires jQuery and MetisMenu to be loaded first.
-
         (function ($) {
             "use strict";
 
-            // Utility to toggle overlay visibility (Assuming you will add .body-overlay element)
             function toggleOverlay(isOpen) {
                 if (isOpen) {
-                    // Apply overlay and disable scrolling
-                    $('.body-overlay').addClass('opened');
-                    // Add Tailwind classes for overlay visibility/opacity (hidden and opacity-0/100)
-                    $('.body-overlay').removeClass('hidden').addClass('opacity-100');
+                    $('.body-overlay').addClass('opened').removeClass('hidden').addClass('opacity-100');
+                    $('.body-overlay').css('pointer-events', 'auto');
                     $('body').addClass('overflow-hidden');
                 } else {
-                    // Remove overlay and re-enable scrolling
-                    $('body').removeClass('overflow-hidden');
-                    // Reverse Tailwind classes
-                    $('.body-overlay').addClass('hidden').removeClass('opacity-100');
+                    const isSearchOpen = $("#header-search").hasClass('search-opened');
+                    const isMobileMenuOpen = !$("#mobile-menu-2").hasClass('hidden');
+                    if (!isSearchOpen && !isMobileMenuOpen) {
+                        $('body').removeClass('overflow-hidden');
+                        $('.body-overlay').removeClass('opened').addClass('hidden').removeClass('opacity-100');
+                        $('.body-overlay').css('pointer-events', 'none');
+                    }
                 }
             }
 
-            // Custom classes for component states
             const searchOpenClass = 'search-opened';
-            const infoOpenClass = 'info-opened';
             const stickyClasses = 'fixed top-0 w-full z-[999] shadow-xl bg-white transition-all duration-300';
 
-            // 01. PreLoader Js (Re-enabling Preloader functionality)
+            // Search Toggle
+            $(".search-toggle").on("click", function (e) {
+                e.preventDefault();
+                $("#mobile-menu-2").addClass('hidden');
+                $("#header-search").addClass(searchOpenClass);
+                toggleOverlay(true);
+                $('#header-search input[type="text"]').focus();
+            });
+            $("#header__search-btn-close").on("click", function (e) {
+                e.preventDefault();
+                $("#header-search").removeClass(searchOpenClass);
+                toggleOverlay(false);
+            });
+
+            // Mobile Menu Toggle
+            $(".mobile-menu-toggle").on("click", function (e) {
+                e.preventDefault();
+                $("#header-search").removeClass(searchOpenClass);
+                $("#mobile-menu-2").toggleClass('hidden');
+                if (!$("#mobile-menu-2").hasClass('hidden')) {
+                    toggleOverlay(true);
+                } else {
+                    if (!$("#header-search").hasClass(searchOpenClass)) {
+                        toggleOverlay(false);
+                    }
+                }
+            });
+
+            // Overlay Click
+            $(".body-overlay").on("click", function () {
+                $("#header-search").removeClass(searchOpenClass);
+                $("#mobile-menu-2").addClass('hidden');
+                toggleOverlay(false);
+            });
+
+            // Sticky Header
+            $(window).on('scroll', function () {
+                var scroll = $(window).scrollTop();
+                if (scroll < 100) {
+                    $("#header-sticky").removeClass(stickyClasses);
+                } else {
+                    $("#header-sticky").addClass(stickyClasses);
+                }
+            });
+
+            // Loading Animation
             $(window).on('load', function () {
                 $("#loading").fadeOut(500);
             });
@@ -1795,98 +1632,37 @@
                 }
             });
 
-
-            // 02. Search Js 
-            $(".search-toggle").on("click", function (e) {
-                e.preventDefault(); // Prevent default link behavior
-                // Close sidebar if open
-                // $("#side-menu-wrapper").removeClass(infoOpenClass); // This element doesn't exist
-                $("#header-search").addClass(searchOpenClass);
-                toggleOverlay(true); // Now uses the actual overlay element
-                $('#header-search input[type="text"]').focus();
-            });
-            $("#header__search-btn-close").on("click", function (e) {
-                e.preventDefault(); // Prevent default link behavior
-                $("#header-search").removeClass(searchOpenClass);
-                toggleOverlay(false); // Now uses the actual overlay element
-            });
-
-            // 03. Info Bar Js (Mobile Sidebar) 
-            $(".mobile-menu-toggle").on("click", function (e) {
-                e.preventDefault(); // Prevent default link behavior
-                // Close search if it's open
-                $("#header-search").removeClass(searchOpenClass);
-                // The mobile menu is toggled by jQuery logic now
-                $("#mobile-menu-2").toggleClass('hidden');
-
-                // We'll use the overlay toggle only when opening the mobile menu (as the button toggle handles closing it too)
-                if (!$("#mobile-menu-2").hasClass('hidden')) {
-                    toggleOverlay(true);
-                } else {
-                    // Check if search is also closed before hiding overlay
-                    if (!$("#header-search").hasClass(searchOpenClass)) {
-                        toggleOverlay(false);
-                    }
-                }
-            });
-
-            // Handle closing both search and sidebar when clicking the overlay
-            $(".body-overlay").on("click", function () {
-                $("#header-search").removeClass(searchOpenClass);
-                $("#mobile-menu-2").addClass('hidden'); // Close mobile menu
-
-                toggleOverlay(false);
-            });
-
-            // 04. Sticky Header Js
+            // Scroll to Top Button
             $(window).on('scroll', function () {
-                var scroll = $(window).scrollTop();
-                if (scroll < 100) {
-                    // Remove the sticky classes when scrolling up past the threshold
-                    $("#header-sticky").removeClass(stickyClasses);
-                } else {
-                    // Add the sticky classes when scrolling down past the threshold
-                    $("#header-sticky").addClass(stickyClasses);
-                }
-            });
-
-            // 05. Data-Background Js
-            // This function runs automatically via the script block below
-
-            // 06. Mobile Menu Js (MetisMenu Dependency)
-            $(document).ready(function () {
-                // The current HTML does not have the MetisMenu required structure (#mobile-menu-active),
-                // so this function will not run, which is fine since we disabled submenus earlier.
-                const $mobileMenu = $('#mobile-menu-active');
-                if ($mobileMenu.length) {
-                    $mobileMenu.metisMenu();
-                }
-            });
-
-            // 07. Scroll To Top Js
-            // Assuming you will add a scroll-to-top button with id="scroll" later
-            $(window).on('scroll', function (event) {
                 if ($(this).scrollTop() > 600) {
-                    $('#scroll').fadeIn(200)
+                    $('#scroll').fadeIn(200);
                 } else {
-                    $('#scroll').fadeOut(200)
+                    $('#scroll').fadeOut(200);
                 }
             });
             $('#scroll').on('click', function (event) {
                 event.preventDefault();
                 $('html, body').animate({
                     scrollTop: 0,
-                }, 600); // Reduced animation duration for smoother feel
+                }, 600);
             });
 
-            // Manually run data-background on load since it won't be run by MetisMenu init (which isn't running)
+            // Background Images
             $("[data-background]").each(function () {
                 $(this).css("background-image", "url( " + $(this).attr("data-background") + " )");
             });
 
+            // Mobile Menu MetisMenu (if it's needed)
+            $(document).ready(function () {
+                const $mobileMenu = $('#mobile-menu-active');
+                if ($mobileMenu.length) {
+                    $mobileMenu.metisMenu();
+                }
+            });
+
         })(jQuery);
     </script>
-    <!-- END: Injected Scripts -->
+
 </body>
 
 </html>
