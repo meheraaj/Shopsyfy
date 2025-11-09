@@ -373,10 +373,10 @@ if (userCredentials.email && userCredentials.password) {
         </div>
 
         <!-- Login Button -->
-        <a href="login.html" class="bg-[#bc8246] text-white text-sm px-4 py-2 rounded-lg font-medium 
+        <button onclick="window.location.href='./login.html'" class="bg-[#bc8246] text-white text-sm px-4 py-2 rounded-lg font-medium 
             hover:bg-[#a96d38] transition">
             Login
-        </a>
+        </button>
     </div>`;
 }
 
