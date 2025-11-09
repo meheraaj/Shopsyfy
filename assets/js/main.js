@@ -258,10 +258,10 @@ async function fillDatas() {
   });
 
   document.addEventListener("click", async (e) => {
-    e.preventDefault();
     // ADD to cart
     const btn = e.target.closest(".addtowishlist");
     if (btn) {
+      e.preventDefault();
       const productData = btn.dataset.product;
       if (!productData) return;
 

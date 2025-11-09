@@ -142,12 +142,22 @@
         main{
             @apply xl:px-[10%] 2xl:px-[15%]
         }
+        
     </style>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
         body {
             font-family: 'Poppins', sans-serif;
+        }
+
+        @media (max-width: 639px) {
+            #mini-cart {
+                left: 50% !important;
+                right: auto !important;
+                transform: translateX(-50%) !important;
+                width: 280px !important;
+            }
         }
 
         #loading {
@@ -1137,7 +1147,8 @@
                     </div>
                     <div>
                         <ul class="space-y-2">
-                            <li><a href="#" class="hover:text-white hover:underline">About Us</a></li>
+                            <li><a href="contact.html#aboutus" class="hover:text-white hover:underline">About Us</a>
+                            </li>
                             <li><a href="#" class="hover:text-white hover:underline">Careers</a></li>
                             <li><a href="#" class="hover:text-white hover:underline">Delivery Information</a></li>
                             <li><a href="#" class="hover:text-white hover:underline">Privacy Policy</a></li>

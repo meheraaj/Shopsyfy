@@ -691,6 +691,15 @@
             z-index: 10010;
         }
 
+        @media (max-width: 639px) {
+            #mini-cart {
+                left: 50% !important;
+                right: auto !important;
+                transform: translateX(-50%) !important;
+                width: 280px !important;
+            }
+        }
+
         .body-overlay {
             z-index: 9998;
             pointer-events: none;
@@ -844,8 +853,8 @@
                                                     <a href="cart.html"
                                                         class="os-btn block w-full text-center py-3 rounded-full text-white bg-8a8f6a font-medium transition hover:bg-opacity-90 shadow-lg">View
                                                         Cart</a>
-                                                    <button
-                                                        class="os-btn os-btn-black block w-full text-center py-3 rounded-full text-white bg-323232 font-medium transition hover:bg-gray-700 shadow-lg">Checkout</button>
+                                                    <a href="checkout.html"
+                                                        class="os-btn os-btn-black block w-full text-center py-3 rounded-full text-white bg-323232 font-medium transition hover:bg-gray-700 shadow-lg">Checkout</a>
                                                 </div>
 
                                             </div>
@@ -871,11 +880,12 @@
             </div>
             <div id="mobile-menu-2" class="hidden lg:hidden bg-white border-t border-gray-200">
                 <div class="px-4 py-3 space-y-2">
-                    <a href="index.html" class="block text-[#444] hover:text-[#bc8246] text-sm font-medium">Home</a>
-                    <a href="index.html#shop"
-                        class="block text-[#444] hover:text-[#bc8246] text-sm font-medium">Shop</a>
-                    <a href="index.html#reviews"
-                        class="block text-[#444] hover:text-[#bc8246] text-sm font-medium">Reviews</a>
+                    <button href="index.html"
+                        class="block text-[#444] hover:text-[#bc8246] text-sm font-medium">Home</button>
+                    <button href="index.html#shop"
+                        class="block text-[#444] hover:text-[#bc8246] text-sm font-medium">Shop</button>
+                    <button href="index.html#reviews"
+                        class="block text-[#444] hover:text-[#bc8246] text-sm font-medium">Reviews</button>
                     <a href="contact.html"
                         class="block text-[#444] hover:text-[#bc8246] text-sm font-medium">Contact</a>
                 </div>
@@ -1442,7 +1452,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
             const authArea = document.getElementById("auth-area");
 
@@ -1501,7 +1511,7 @@
             // Initial render
             renderAuthArea();
         });
-    </script>
+    </script> -->
 
     <script>
         /*!
